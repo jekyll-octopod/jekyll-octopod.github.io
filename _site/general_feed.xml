@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>jekyll - octopod</title>
+ <link href="http://jekyll-octopod.github.io/general_feed.xml" rel="self"/>
+ <link href="http://jekyll-octopod.github.io"/>
+ <updated>2016-06-02T12:36:21+02:00</updated>
+ <id>http://jekyll-octopod.github.io/</id>
+ <author>
+   <name>Stefan Haslinger</name>
+   <email>stefan.haslinger@informatom.com</email>
+ </author>
+
+ 
+
+</feed>
