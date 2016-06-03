@@ -2,13 +2,13 @@
 <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>jekyll - octopod</title>
-    <link>http://jekyll-octopod.github.io</link>
-    <atom:link href="http://jekyll-octopod.github.io/episodes.mp3.rss" rel="self" type="application/rss+xml" title="mp3 Episode RSS-Feed"/>
-    <atom:link rel="alternate" href="http://jekyll-octopod.github.io/episodes.ogg.rss" type="application/rss+xml" title="ogg Episode RSS-Feed"/>
-<atom:link rel="alternate" href="http://jekyll-octopod.github.io/episodes.m4a.rss" type="application/rss+xml" title="m4a Episode RSS-Feed"/>
+    <link>https://jekyll-octopod.github.io</link>
+    <atom:link href="https://jekyll-octopod.github.io/episodes.mp3.rss" rel="self" type="application/rss+xml" title="mp3 Episode RSS-Feed"/>
+    <atom:link rel="alternate" href="https://jekyll-octopod.github.io/episodes.ogg.rss" type="application/rss+xml" title="ogg Episode RSS-Feed"/>
+<atom:link rel="alternate" href="https://jekyll-octopod.github.io/episodes.m4a.rss" type="application/rss+xml" title="m4a Episode RSS-Feed"/>
     <description>Static Site Podcast Publishing for Geeks.
 </description>
-    <lastBuildDate>Fri, 03 Jun 2016 09:55:19 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jun 2016 09:58:31 +0200</lastBuildDate>
     <language>en</language>
 
     <itunes:summary>Static Site Podcast Publishing for Geeks.
@@ -26,8 +26,8 @@
     <itunes:keywords>octopod, podcast, magic</itunes:keywords>
     <image>
       <title>jekyll - octopod</title>
-      <url>http://jekyll-octopod.github.io/img/logo-itunes.jpg</url>
-      <link>http://jekyll-octopod.github.io</link>
+      <url>https://jekyll-octopod.github.io/img/logo-itunes.jpg</url>
+      <link>https://jekyll-octopod.github.io</link>
     </image>
     
     <itunes:category text="Technology">

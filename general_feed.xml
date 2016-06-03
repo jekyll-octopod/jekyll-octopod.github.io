@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>jekyll - octopod</title>
- <link href="http://jekyll-octopod.github.io/general_feed.xml" rel="self"/>
- <link href="http://jekyll-octopod.github.io"/>
- <updated>2016-06-03T09:55:19+02:00</updated>
- <id>http://jekyll-octopod.github.io/</id>
+ <link href="https://jekyll-octopod.github.io/general_feed.xml" rel="self"/>
+ <link href="https://jekyll-octopod.github.io"/>
+ <updated>2016-06-03T09:58:31+02:00</updated>
+ <id>https://jekyll-octopod.github.io/</id>
  <author>
    <name>Stefan Haslinger</name>
    <email>stefan.haslinger@informatom.com</email>
