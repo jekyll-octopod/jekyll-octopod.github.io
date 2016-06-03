@@ -133,9 +133,10 @@
 <h3 id="split-chapter">Split chapter</h3>
 <p>Splits a chapter, like it is written to the post YAML front matter, into the components ‘start’ — which refers to a single point in time relative to the beginning of the media file — and ‘title’ — which defines the text to be the title of the chapter.</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="s1">'</span><span class="s">00:00:00.000</span><span class="nv"> </span><span class="s">Welcome</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">Octopod!'</span> <span class="err">|</span> <span class="nv">split_chapter</span> <span class="pi">}}</span>          <span class="s">=&gt; { 'start' =&gt; '00:00:00.000', 'title' =&gt; 'Welcome to Octopod!' }</span>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="s1">'</span><span class="s">00:00:00.000</span><span class="nv"> </span><span class="s">Welcome</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">Octopod!'</span> <span class="err">|</span> <span class="nv">split_chapter</span> <span class="pi">}}</span> <span class="s">=&gt;</span>
+                    <span class="s">{ 'start' =&gt; '00:00:00.000', 'title' =&gt; 'Welcome to Octopod!' }</span>
 <span class="pi">{{</span> <span class="s1">'</span><span class="s">00:00:00.000</span><span class="nv"> </span><span class="s">Welcome</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">Octopod!'</span> <span class="err">|</span> <span class="nv">split_chapter</span><span class="pi">:</span><span class="s1">'</span><span class="s">title'</span> <span class="pi">}}</span>  <span class="s">=&gt; 'Welcome to Octopod!'</span>
-<span class="pi">{{</span> <span class="s1">'</span><span class="s">00:00:00.000</span><span class="nv"> </span><span class="s">Welcome</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">Octopod!'</span> <span class="err">|</span> <span class="nv">split_chapter</span><span class="pi">:</span><span class="s1">'</span><span class="s">start'</span> <span class="pi">}}</span> <span class="s">=&gt; '00:00:00.000'</span></code></pre></figure>
+<span class="pi">{{</span> <span class="s1">'</span><span class="s">00:00:00.000</span><span class="nv"> </span><span class="s">Welcome</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">Octopod!'</span> <span class="err">|</span> <span class="nv">split_chapter</span><span class="pi">:</span><span class="s1">'</span><span class="s">start'</span> <span class="pi">}}</span>  <span class="s">=&gt; '00:00:00.000'</span></code></pre></figure>
 
 <h3 id="audio-tag">Audio tag</h3>
 <p>Returns an <code class="highlighter-rouge">&lt;audio&gt;</code> tag for a given page with <code class="highlighter-rouge">&lt;source&gt;</code> tags in it for every audio file in the page’s YAML front matter.</p>
@@ -181,7 +182,7 @@
 <h3 id="sha1">SHA1</h3>
 <p>Returns the hex-encoded hash value of a given string. The optional second argument defines the length of the returned string.</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="s2">"</span><span class="s">Octopod"</span> <span class="err">|</span> <span class="nv">sha1</span> <span class="pi">}}</span>      <span class="s">=&gt; "8b20a59c"</span>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="s2">"</span><span class="s">Octopod"</span> <span class="err">|</span> <span class="nv">sha1</span> <span class="pi">}}</span>    <span class="s">=&gt; "8b20a59c"</span>
 <span class="pi">{{</span> <span class="s2">"</span><span class="s">Octopod"</span> <span class="err">|</span> <span class="nv">sha1</span><span class="pi">:</span><span class="nv">23</span> <span class="pi">}}</span> <span class="s">=&gt; "8b20a59c8e2dcb5e1f845ba"</span></code></pre></figure>
 
 <h3 id="navigation-list">Navigation list</h3>
@@ -199,17 +200,23 @@
 <p>Returns HTML links to all episode feeds named by the convention <code class="highlighter-rouge">episodes.&lt;episode_file_format&gt;.rss</code> within the root directory. Also it returns all additional feeds specified by <code class="highlighter-rouge">additional_feeds</code> in the <code class="highlighter-rouge">_config.yml</code>. If an <code class="highlighter-rouge">episode_file_format</code> or key of <code class="highlighter-rouge">additional_feeds</code> equals the optional parameter, it will be skipped.</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="nv">site | episode_feeds_html</span><span class="pi">:</span><span class="s1">'</span><span class="s">m4a'</span> <span class="pi">}}</span> <span class="s">=&gt;</span>
-<span class="s">&lt;link rel="alternate" type="application/rss+xml" title="mp3 Episode RSS-Feed" href="/episodes.mp3.rss" /&gt;</span>
-<span class="s">&lt;link rel="alternate" type="application/rss+xml" title="Torrent Feed m4a" href="http://bitlove.org/octopod/octopod_m4a/feed" /&gt;</span>
-<span class="s">&lt;link rel="alternate" type="application/rss+xml" title="Torrent Feed mp3" href="http://bitlove.org/octopod/octopod_mp3/feed" /&gt;</span></code></pre></figure>
+<span class="s">&lt;link rel="alternate" type="application/rss+xml" title="mp3 Episode RSS-Feed"</span>
+      <span class="s">href="/episodes.mp3.rss" /&gt;</span>
+<span class="s">&lt;link rel="alternate" type="application/rss+xml" title="Torrent Feed m4a"</span>
+      <span class="s">href="http://bitlove.org/octopod/octopod_m4a/feed" /&gt;</span>
+<span class="s">&lt;link rel="alternate" type="application/rss+xml" title="Torrent Feed mp3"</span>
+      <span class="s">href="http://bitlove.org/octopod/octopod_mp3/feed" /&gt;</span></code></pre></figure>
 
 <h3 id="episode-feeds-rss">Episode feeds RSS</h3>
 <p>Returns RSS-XML links to all episode feeds named by the convention <code class="highlighter-rouge">episodes.&lt;episode_file_format&gt;.rss</code> within the root directory. Also it returns all additional feeds specified by <code class="highlighter-rouge">additional_feeds</code> in the <code class="highlighter-rouge">_config.yml</code>. If an <code class="highlighter-rouge">episode_file_format</code> or key of <code class="highlighter-rouge">additional_feeds</code> equals the optional parameter, it will be skipped.</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="nv">site | episode_feeds_rss</span><span class="pi">:</span><span class="s1">'</span><span class="s">m4a'</span> <span class="pi">}}</span> <span class="s">=&gt;</span>
-<span class="s">&lt;atom:link rel="alternate" href="/episodes.mp3.rss" type="application/rss+xml" title="mp3 Episode RSS-Feed"/&gt;</span>
-<span class="s">&lt;atom:link rel="alternate" href="http://bitlove.org/octopod/octopod_m4a/feed" type="application/rss+xml" title="Torrent Feed m4a"/&gt;</span>
-<span class="s">&lt;atom:link rel="alternate" href="http://bitlove.org/octopod/octopod_mp3/feed" type="application/rss+xml" title="Torrent Feed mp3"/&gt;</span></code></pre></figure>
+<span class="s">&lt;atom:link rel="alternate" href="/episodes.mp3.rss"</span>
+           <span class="s">type="application/rss+xml" title="mp3 Episode RSS-Feed"/&gt;</span>
+<span class="s">&lt;atom:link rel="alternate" href="http://bitlove.org/octopod/octopod_m4a/feed"</span>
+           <span class="s">type="application/rss+xml" title="Torrent Feed m4a"/&gt;</span>
+<span class="s">&lt;atom:link rel="alternate" href="http://bitlove.org/octopod/octopod_mp3/feed"</span>
+           <span class="s">type="application/rss+xml" title="Torrent Feed mp3"/&gt;</span></code></pre></figure>
 
 <p><em>Continue reading with <a href="/post_structure">The post structure</a>.</em></p>
 
