@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>jekyll - octopod - Episodes</title>
+  <title>jekyll - octopod - jekyll-octopod</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="description" content="Static Site Podcast Publishing for Geeks.
@@ -49,7 +49,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-<li class="active"><a  class="active" href="http://jekyll-octopod.github.io/">Episodes</a></li>
+<li class="active"><a  class="active" href="http://jekyll-octopod.github.io/">jekyll-octopod</a></li>
 <li><a  href="http://jekyll-octopod.github.io/inprint.html">Inprint</a></li>
 </ul>
 
@@ -68,7 +68,93 @@
       <div class="row ">
         <div class="col-sm-8">
           <div class="content">
-            
+            # jekyll-octopod
+
+[![Gem Version](https://badge.fury.io/rb/jekyll-octopod.svg)](https://badge.fury.io/rb/jekyll-octopod)
+
+<img align="right" src="img/logo.jpg" alt="logo">
+A podcast publishing extension for the static site generator [Jekyll](https://jekyllrb.com/)
+
+## tl;dr
+
+You generate a static web site for your podcast on your own computer, test drive it and sync it to your web space.
+
+No Wordpress, PHP, Ruby other scripting language, database management system or any other dynamic component is needed on your server.
+This increases security immensely.
+
+## Tell me more!
+
+If you want to take a look: See (and listen to) Stefan's podcast [Aua-Uff-Code!](https://aua-uff-co.de).
+
+The page you will get when you follow the installation instructions looks like this:
+
+![screenshot](img/demo.png)
+
+Technically speaking, jekyll-octopod is a Jekyll plugin and a Ruby Gem. It
+contains of scripts, templates, helpers and extensions to publish your
+podcasts in the cool text file lover's way.
+
+If you are not afraid of the command line on your computer and text files are the
+stuff that heat up your geeky little heart, jekyll-octopod may be worth a trial
+to publish your podcasts.
+
+The underlying assumptions of jekyll-octopod are that static content
+should be delivered statically and text files are the perfect way to handle
+podcast metadata. Jekyll-octopod makes it easy to generate and deploy a
+website with feeds for your podcast out of one textfile and at least one audio
+file per episode.
+
+
+## Features
+
+jekyll-octopod brings innately:
+* iTunes-ready episode feeds for different file formats (e.g. mp3, ogg, m4a)
+* a ready to use [Bootflat](http://bootflat.github.io/) and  [Twitter Bootstrap](http://twitter.github.com/bootstrap/)-based, responsive (i.e. mobile friendly) layout modifiable to your heart's desire.
+* [Flattr](https://flattr.com/) support on the website and in the episode feed.
+* [Twitter](https://twitter.com) integration on the website.
+* comments via [Disqus](http://disqus.com/).
+* [Podlove Web Player](http://podlove.org/podlove-web-player/) in it's current version 3.0.
+* Static player pages that are embeddable in iframes for your other or affiliates' sites.
+* [Podlove Alternate Feeds](http://podlove.org/alternate-feeds/).
+* [Podlove Simple Chapters](http://podlove.org/simple-chapters/).
+* [Podlove Subscribe Button](http://podlove.org/podlove-subscribe-button/) for easy podcast subscription on any operating system, including mobile phones.
+* https compatibility.
+* Google search integration.
+* Easy show notes creation.
+
+**Is this production ready?**
+
+We use it in production, so we believe it is.
+But it is very likely, that it still contains bugs. And there is no guarantee that behavior will not change with the next update :-).
+
+Hopefully you are brave enough to play with this cute little toy anyway.
+
+
+## Documentation
+
+Detailed documentation is provided on the folloging pages:
+
+1. [Prerequisites]
+2. [Installation]
+3. [Demo]
+4. [Usage]
+5. [The command line tool]
+6. [Liquid filters]
+7. [The post structure]
+8. [Contributions]
+9. [Credits]
+10. [License]
+
+You will find a link to the next page in the suggested reading track at the bottom of each page.
+
+_Continue reading with [Prerequisites](prerequisites)._
+
+## Maintainer
+
+Stefan Haslinger <mailto:stefan.haslinger@informatom.com>
+
+Credits go to lots of [people and projects](https://github.com/informatom/jekyll-octopod/wiki/Credits).
+
           </div>
         </div>
         <div id="sidebar" class="col-sm-4">
