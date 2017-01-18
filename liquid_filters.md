@@ -245,7 +245,7 @@
 <li><a  href="https://jekyll-octopod.github.io/command_line">Command Line Tool</a></li>
 <li class="active"><a  class="active" href="https://jekyll-octopod.github.io/liquid_filters.md">Liquid Filters</a></li>
 <li><a  href="https://jekyll-octopod.github.io/post_structure">Post structure</a></li>
-<li><a  href="https://jekyll-octopod.github.io/contributions">Prerequisites</a></li>
+<li><a  href="https://jekyll-octopod.github.io/contributions">Contributions</a></li>
 <li><a  href="https://jekyll-octopod.github.io/credits">Credits</a></li>
 <li><a  href="https://jekyll-octopod.github.io/license">License</a></li>
 <li><a  href="https://jekyll-octopod.github.io/conduct">Code of Conduct</a></li>
