@@ -1,4 +1,7 @@
-# jekyll-octopod.github.io
-Github Pages site for jekyll-octopod
+# Sources for jekyll-octopod.github.io
 
-Visit http://jekyll-octopod.github.io for the actual site.
+These files are the sources to generate Github pages for jekyll-octopod.
+
+As the software and the site itself, they are [MIT-licensed](https://github.com/jekyll-octopod/jekyll-octopod.github.io.source/blob/master/LICENSE).
+
+The site is a jekyll-octopod page itself. Nifty meta, eh?

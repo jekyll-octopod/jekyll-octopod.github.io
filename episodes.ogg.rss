@@ -4,11 +4,10 @@
     <title>jekyll - octopod</title>
     <link>https://jekyll-octopod.github.io</link>
     <atom:link href="https://jekyll-octopod.github.io/episodes.ogg.rss" rel="self" type="application/rss+xml" title="ogg Episode RSS-Feed"/>
-    <atom:link rel="alternate" href="https://jekyll-octopod.github.io/episodes.m4a.rss" type="application/rss+xml" title="m4a Episode RSS-Feed"/>
-<atom:link rel="alternate" href="https://jekyll-octopod.github.io/episodes.mp3.rss" type="application/rss+xml" title="mp3 Episode RSS-Feed"/>
+    <atom:link rel="alternate" href="https://jekyll-octopod.github.io/episodes.mp3.rss" type="application/rss+xml" title="mp3 Episode RSS-Feed"/>
     <description>Static Site Podcast Publishing for Geeks.
 </description>
-    <lastBuildDate>Mon, 06 Jun 2016 13:14:35 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 18 Jan 2017 20:19:57 +0100</lastBuildDate>
     <language>en</language>
 
     <itunes:summary>Static Site Podcast Publishing for Geeks.

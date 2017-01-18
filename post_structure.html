@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>jekyll - octopod - jekyll-octopod</title>
+  <title>jekyll - octopod - Post structure</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="description" content="Static Site Podcast Publishing for Geeks.
@@ -64,95 +64,57 @@
       <div class="row ">
         <div class="col-sm-8">
           <div class="content">
-            <h1 id="jekyll-octopod">jekyll-octopod</h1>
+            <h1 id="post-structure">Post structure</h1>
 
-<p><a href="https://badge.fury.io/rb/jekyll-octopod"><img src="https://badge.fury.io/rb/jekyll-octopod.svg" alt="Gem Version" /></a></p>
+<p>The post template can be found in <code class="highlighter-rouge">/includes/post.html</code>. It renders the posts from the <code class="highlighter-rouge">/_post</code> directory.
+Each post has to have a certain structure which consists of the YAML front matter and of the body part.</p>
 
-<p>A podcast publishing extension for the static site generator <a href="https://jekyllrb.com/">Jekyll</a></p>
+<h2 id="the-yaml-front-matter">The YAML front matter</h2>
 
-<h2 id="tldr">tl;dr</h2>
+<p>jekyll-octopod’s YAML front matter is an extension of <a href="https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter">Jekyll’s YAML front matter</a>.</p>
 
-<p>You generate a static web site for your podcast on your own computer, test drive it and sync it to your web space.</p>
+<p>The attributes that can be set here are best described with the following example; they are quite self-explanatory:</p>
 
-<p>No Wordpress, PHP, Ruby other scripting language, database management system or any other dynamic component is needed on your server.
-This increases security immensely.</p>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">title</span><span class="pi">:</span> <span class="s">Episode 0</span>
+<span class="s">subtitle</span><span class="pi">:</span> <span class="s">Getting Started Is Never Easy</span>
+<span class="s">summary</span><span class="pi">:</span> <span class="s">Otherwise the summary is the first paragraph of the show notes</span>
+<span class="s">episode-cover</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/img/episode-cover0.jpg'</span>
+<span class="s">datum:</span><span class="nv"> </span><span class="s">March</span><span class="nv"> </span><span class="s">22nd</span><span class="nv"> </span><span class="s">2016</span>
+<span class="s">layout:</span><span class="nv"> </span><span class="s">post</span>
+<span class="s">author:</span><span class="nv"> </span><span class="s">Arne</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">Stefan</span>
+<span class="s">explicit:</span><span class="nv"> </span><span class="s">'no'</span>
+<span class="s">duration:</span><span class="nv"> </span><span class="s">"0:03:13"</span>
+<span class="s">audio</span><span class="pi">:</span>
+  <span class="s">mp3</span><span class="pi">:</span> <span class="s">episode0.mp3</span>
+  <span class="s">ogg</span><span class="pi">:</span> <span class="s">episode0.ogg</span>
+  <span class="s">m4a</span><span class="pi">:</span> <span class="s">episode0.m4a</span>
+<span class="s">chapters</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s1">'</span><span class="s">00:00:00.000</span><span class="nv"> </span><span class="s">Intro.'</span>
+  <span class="pi">-</span> <span class="s1">'</span><span class="s">00:00:30.000</span><span class="nv"> </span><span class="s">...</span><span class="nv"> </span><span class="s">Shoubidoubidoo</span><span class="nv"> </span><span class="s">...'</span>
+  <span class="pi">-</span> <span class="s1">'</span><span class="s">00:02:45.000</span><span class="nv"> </span><span class="s">Outro.'</span>
+<span class="s">tags</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s2">"</span><span class="s">a</span><span class="nv"> </span><span class="s">tag"</span>
+  <span class="pi">-</span> <span class="s2">"</span><span class="s">another</span><span class="nv"> </span><span class="s">tag"</span>
+<span class="s">posts-dir</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/path/to/post/dir"</span> <span class="c1"># default: '_posts'</span></code></pre></figure>
 
-<h2 id="tell-me-more">Tell me more!</h2>
+<h2 id="the-body">The body</h2>
 
-<p>If you want to take a look: See (and listen to) Stefan’s podcast <a href="https://aua-uff-co.de">Aua-Uff-Code!</a>.</p>
+<p>The body part can contain arbitrary markdown content.</p>
 
-<p>The page you will get when you follow the installation instructions looks like this one:</p>
+<p>At minimum a short text, the web player (embedded in an iframe) and some links are recommended. For example:</p>
 
-<p><img src="img/demo.png" width="600" alt="screenshot" /></p>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">Getting started is hard.</span>
 
-<p>Technically speaking, jekyll-octopod is a Jekyll plugin and a Ruby Gem. It
-contains of scripts, templates, helpers and extensions to publish your
-podcasts in the cool text file lover’s way.</p>
+<span class="pi">{{</span> <span class="nv">page | web_player_moderator</span><span class="pi">:</span><span class="nv">site</span> <span class="pi">}}</span>
 
-<p>If you are not afraid of the command line on your computer and text files are the
-stuff that heat up your geeky little heart, jekyll-octopod may be worth a trial
-to publish your podcasts.</p>
+<span class="c1">## Show Notes und Links</span>
 
-<p>The underlying assumptions of jekyll-octopod are that static content
-should be delivered statically and text files are the perfect way to handle
-podcast metadata. Jekyll-octopod makes it easy to generate and deploy a
-website with feeds for your podcast out of one textfile and at least one audio
-file per episode.</p>
+  <span class="err">*</span> <span class="s">Link lists are easily created</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">Aua-uff-Code! Podcast</span><span class="pi">]</span><span class="s">(https://aua-uff-co.de)</span>
+  <span class="err">*</span> <span class="s">another link to [Jekyll](https://jekyllrb.com/)</span></code></pre></figure>
 
-<h2 id="features">Features</h2>
+<p>Audio and script tags get filtered out of the body for feed creation, so that they do not disturb in podcatchers rendering the shown notes.</p>
 
-<p>jekyll-octopod brings innately:</p>
-
-<ul>
-  <li>iTunes-ready <em>paged</em> episode feeds for different file formats (e.g. mp3, ogg, m4a)</li>
-  <li>a ready to use <a href="http://bootflat.github.io/">Bootflat</a> and  <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>-based, responsive (i.e. mobile friendly) layout modifiable to your heart’s desire.</li>
-  <li><a href="https://flattr.com/">Flattr</a> support on the website and in the episode feed.</li>
-  <li><a href="https://twitter.com">Twitter</a> integration on the website.</li>
-  <li>comments via <a href="http://disqus.com/">Disqus</a>.</li>
-  <li><a href="http://podlove.org/podlove-web-player/">Podlove Web Player</a> in it’s current version 3.0.</li>
-  <li>Static player pages that are embeddable in iframes for your other or affiliates’ sites.</li>
-  <li><a href="http://podlove.org/alternate-feeds/">Podlove Alternate Feeds</a>.</li>
-  <li><a href="http://podlove.org/simple-chapters/">Podlove Simple Chapters</a>.</li>
-  <li><a href="http://podlove.org/podlove-subscribe-button/">Podlove Subscribe Button</a> for easy podcast subscription on any operating system, including mobile phones.</li>
-  <li>https compatibility.</li>
-  <li>Google search integration.</li>
-  <li>Easy show notes creation.</li>
-</ul>
-
-<p><strong>Is this production ready?</strong></p>
-
-<p>We use it in production, so we believe it is.
-But it is very likely, that it still contains bugs. And there is no guarantee that behavior will not change with the next update :-).</p>
-
-<p>Hopefully you are brave enough to play with this cute little toy anyway.</p>
-
-<h2 id="documentation">Documentation</h2>
-
-<p>Detailed documentation is provided on the folloging pages:</p>
-
-<ol>
-<li><a href="https://jekyll-octopod.github.io/prerequisites">Prerequisites</a></li>
-<li><a href="https://jekyll-octopod.github.io/installation">Installation</a></li>
-<li><a href="https://jekyll-octopod.github.io/demo">Demo</a></li>
-<li><a href="https://jekyll-octopod.github.io/usage">Usage</a></li>
-<li><a href="https://jekyll-octopod.github.io/command_line">Command Line Tool</a></li>
-<li><a href="https://jekyll-octopod.github.io/liquid_filters.md">Liquid Filters</a></li>
-<li><a href="https://jekyll-octopod.github.io/post_structure">Post structure</a></li>
-<li><a href="https://jekyll-octopod.github.io/contributions">Prerequisites</a></li>
-<li><a href="https://jekyll-octopod.github.io/credits">Credits</a></li>
-<li><a href="https://jekyll-octopod.github.io/license">License</a></li>
-<li><a href="https://jekyll-octopod.github.io/conduct">Code of Conduct</a></li>
-</ol>
-
-<p>You will find a link to the next page in the suggested reading track at the bottom of each page.</p>
-
-<p><em>Continue reading with <a href="prerequisites">Prerequisites</a>.</em></p>
-
-<h2 id="maintainer">Maintainer</h2>
-
-<p>Stefan Haslinger <a href="mailto:stefan.haslinger@informatom.com">stefan.haslinger@informatom.com</a></p>
-
-<p>Credits go to lots of <a href="credits">people and projects</a>.</p>
+<p><em>Continue reading with <a href="/contributions">Contributions</a>.</em></p>
 
           </div>
         </div>
@@ -182,7 +144,7 @@ But it is very likely, that it still contains bugs. And there is no guarantee th
 <li><a  href="https://jekyll-octopod.github.io/usage">Usage</a></li>
 <li><a  href="https://jekyll-octopod.github.io/command_line">Command Line Tool</a></li>
 <li><a  href="https://jekyll-octopod.github.io/liquid_filters.md">Liquid Filters</a></li>
-<li><a  href="https://jekyll-octopod.github.io/post_structure">Post structure</a></li>
+<li class="active"><a  class="active" href="https://jekyll-octopod.github.io/post_structure">Post structure</a></li>
 <li><a  href="https://jekyll-octopod.github.io/contributions">Prerequisites</a></li>
 <li><a  href="https://jekyll-octopod.github.io/credits">Credits</a></li>
 <li><a  href="https://jekyll-octopod.github.io/license">License</a></li>

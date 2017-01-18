@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>jekyll - octopod - Usage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Static Site Podcast Publishing for Geeks.
+">
+  <meta name="author" content="Stefan Haslinger">
+
+  <link rel="alternate" type="application/atom+xml" href="https://jekyll-octopod.github.io/general_feed.xml" title="General Site Atom Feed (No Podcast Metadata!)" />
+  <link rel="alternate" type="application/rss+xml" title="ogg Episode RSS-Feed" href="https://jekyll-octopod.github.io/episodes.ogg.rss" />
+<link rel="alternate" type="application/rss+xml" title="mp3 Episode RSS-Feed" href="https://jekyll-octopod.github.io/episodes.mp3.rss" />
+
+  <link rel="stylesheet" type="text/css" href="https://jekyll-octopod.github.io/assets/css/main.css">
+  <link rel="stylesheet" type="text/css" href="https://jekyll-octopod.github.io/css/custom_styles.css">
+
+  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/jquery.min.js"></script>
+  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/bootstrap.min.js"></script>
+  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/icheck.min.js"></script>
+  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/jquery.fs.selecter.min.js"></script>
+  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/jquery.fs.stepper.min.js"></script>
+  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/custom.js"></script>
+  <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  
+  
+  
+</head>
+
+<body>
+  <div class="container-fluid">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="https://jekyll-octopod.github.io">jekyll - octopod</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+              <li><a href="https://jekyll-octopod.github.io">Home</a></li>
+              <li><a href="https://twitter.com/jekyll_octopod"><i class="fa fa-twitter"></i> @jekyll_octopod</a>
+              <li><a href="https://github.com/jekyll-octopod/jekyll-octopod/issues"><i class="fa fa-github-alt"></i> Github Issues</a></li>
+              <li><a href="https://github.com/jekyll-octopod/jekyll-octopod"><i class="fa fa-github"></i> Github Repo</a></li>
+          </ul>
+          <form class="navbar-form navbar-right" action="https://google.com/search" method="get" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="search item">
+              <input type="hidden" name="q" value="site:jekyll-octopod.github.io" />
+            </div>
+            <button type="submit" class="btn btn-default">Search</button>
+          </form>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row ">
+        <div class="col-sm-8">
+          <div class="content">
+            <h1 id="usage">Usage</h1>
+
+<p>Next, update the configuration settings in the configuration file <code class="highlighter-rouge">_config.yml</code> in the application directory. (You are already in it.)</p>
+
+<ul>
+  <li>You might want to change the images and logos in the <code class="highlighter-rouge">img</code> directory</li>
+  <li>You might want to change the demo episode file and the Jekyll Welcome post in <code class="highlighter-rouge">_posts</code> and <code class="highlighter-rouge">_episodes</code></li>
+</ul>
+
+<p>You can find a documentation of all the non-Octopod-specific settings on the <a href="http://jekyllrb.com/docs/configuration/">Configuration page of the Jekyll Documentation</a>.</p>
+
+<p>Jekyll is highly customizable, if you are into coding (or even just want to get into it), read the <a href="https://jekyllrb.com/docs/home/">Jekyll Documentation</a>. It is very detailed and quite easy to grasp.</p>
+
+<p>First of all, your new podcast episode needs audio data. Octopod assumes that your ready to use audio files stay within the <code class="highlighter-rouge">episodes</code> directory in your projects root.</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>cp ~/my_superduper_audio_files/ocp001.m4a episodes</code></pre></figure>
+
+<p>In addition, jekyll-octopod assumes that the different audio files of each of your episodes are the same content in various formats — with the same duration and everything.<br />
+If they are not, you may confuse your listeners — at least when you are using the chapters feature.</p>
+
+<p>Next up, your episode needs some metadata. A title, some kind of a description, maybe chapters and so on. jekyll-octopod keeps all these metadata in one single text file (Protip: these dear little tots feel very lucky when they might live in a version control system!).<br />
+jekyll-octopod kindly helps you to generate these files with the <code class="highlighter-rouge">octopod episode</code> command. You will get more information on the [[The command line tool]] later.</p>
+
+<p>The following command</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>octopod episode --title <span class="s2">"Why I &lt;3 Octopod"</span></code></pre></figure>
+
+<p>will generate you a template called <strong>YYYY-MM-DD-why-i-_3-octopod.md</strong> (YYYY-MM-DD represents the current date) in your <code class="highlighter-rouge">_posts</code> subdirectory. When you open it in your text editor you’ll see something like this:</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="nn">---</span>
+<span class="s">title</span><span class="pi">:</span> <span class="s">Why I &lt;3 Octopod</span>
+<span class="s">subtitle</span><span class="pi">:</span> <span class="s">A Subtle Subtitle</span>
+<span class="s">date</span><span class="pi">:</span> <span class="s">May 22nd, 2016</span>
+<span class="s">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="s">author</span><span class="pi">:</span> <span class="s">Uncle Octopod</span>
+<span class="s">explicit</span><span class="pi">:</span> <span class="s1">'</span><span class="s">no'</span>
+<span class="s">audio</span><span class="pi">:</span>
+  <span class="s">m4a</span><span class="pi">:</span> <span class="s">name.m4a</span>
+  <span class="s">mp3</span><span class="pi">:</span> <span class="s">name.mp3</span>
+  <span class="s">ogg</span><span class="pi">:</span> <span class="s">name.ogg</span>
+<span class="s">chapters</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="s1">'</span><span class="s">00:00:00.000</span><span class="nv"> </span><span class="s">Intro.'</span>
+<span class="pi">-</span> <span class="s1">'</span><span class="s">00:00:30.000</span><span class="nv"> </span><span class="s">Outro.'</span>
+<span class="nn">---</span>
+<span class="c1">## </span>
+
+<span class="pi">{{</span> <span class="nv">page | web_player</span><span class="pi">:</span><span class="nv">site</span> <span class="pi">}}</span>
+
+<span class="c1">## Shownotes and Links</span>
+
+<span class="err">*</span> <span class="s">Note</span></code></pre></figure>
+
+<table>
+  <tbody>
+    <tr>
+      <td>The part between the “—” and the “—” is the <a href="http://jekyllrb.com/docs/frontmatter/">YAML front matter</a>. This is where all the metadata is stored. Below the YAML frontmatter is the area (body) where you can write down your post’s content (like the show notes and stuff). This strange looking <code class="highlighter-rouge"><span class="p">{</span><span class="nt">"title"</span><span class="err">=&gt;</span><span class="nt">"Usage"</span><span class="err">,</span><span class="w"> </span><span class="nt">"layout"</span><span class="err">=&gt;</span><span class="nt">"default"</span><span class="err">,</span><span class="w"> </span><span class="nt">"docs"</span><span class="err">=&gt;4,</span><span class="w"> </span><span class="nt">"permalink"</span><span class="err">=&gt;</span><span class="nt">"usage"</span><span class="err">,</span><span class="w"> </span><span class="nt">"content"</span><span class="err">=&gt;"#</span><span class="w"> </span><span class="err">Usage\n\nNext,</span><span class="w"> </span><span class="err">update</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">configuration</span><span class="w"> </span><span class="err">settings</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">configuration</span><span class="w"> </span><span class="err">file</span><span class="w"> </span></code>_config.yml<code class="highlighter-rouge"> in the application directory. (You are already in it.)\n\n* You might want to change the images and logos in the </code>img<code class="highlighter-rouge"> directory\n* You might want to change the demo episode file and the Jekyll Welcome post in </code>_posts<code class="highlighter-rouge"> and </code>_episodes<code class="highlighter-rouge">\n\nYou can find a documentation of all the non-Octopod-specific settings on the [Configuration page of the Jekyll Documentation](http://jekyllrb.com/docs/configuration/).\n\nJekyll is highly customizable, if you are into coding (or even just want to get into it), read the [Jekyll Documentation](https://jekyllrb.com/docs/home/). It is very detailed and quite easy to grasp.\n\nFirst of all, your new podcast episode needs audio data. Octopod assumes that your ready to use audio files stay within the </code>episodes<code class="highlighter-rouge"> directory in your projects root.\n\n{% highlight shell %}\n$ cp ~/my_superduper_audio_files/ocp001.m4a episodes\n{% endhighlight %}\n\nIn addition, jekyll-octopod assumes that the different audio files of each of your episodes are the same content in various formats — with the same duration and everything.  \nIf they are not, you may confuse your listeners — at least when you are using the chapters feature.\n\nNext up, your episode needs some metadata. A title, some kind of a description, maybe chapters and so on. jekyll-octopod keeps all these metadata in one single text file (Protip: these dear little tots feel very lucky when they might live in a version control system!).  \njekyll-octopod kindly helps you to generate these files with the </code>octopod episode<code class="highlighter-rouge"> command. You will get more information on the [[The command line tool]] later.\n\nThe following command\n\n{% highlight shell %}\n$ octopod episode --title \"Why I &lt;3 Octopod\"\n{% endhighlight %}\n\nwill generate you a template called **YYYY-MM-DD-why-i-_3-octopod.md** (YYYY-MM-DD represents the current date) in your </code>_posts<code class="highlighter-rouge"> subdirectory. When you open it in your text editor you'll see something like this:\n\n{% highlight YAML %}\n---\ntitle: Why I &lt;3 Octopod\nsubtitle: A Subtle Subtitle\ndate: May 22nd, 2016\nlayout: post\nauthor: Uncle Octopod\nexplicit: 'no'\naudio:\n  m4a: name.m4a\n  mp3: name.mp3\n  ogg: name.ogg\nchapters:\n- '00:00:00.000 Intro.'\n- '00:00:30.000 Outro.'\n---\n## {{ page.subtitle }}\n{% raw %}\n{{ page | web_player:site }}\n{% endraw %}\n## Shownotes and Links\n\n* Note\n{% endhighlight %}\n\nThe part between the \"---\" and the \"---\" is the [YAML front matter](http://jekyllrb.com/docs/frontmatter/). This is where all the metadata is stored. Below the YAML frontmatter is the area (body) where you can write down your post's content (like the show notes and stuff). This strange looking </code>{{ page</td>
+      <td>web_player_moderator:site }}<code class="highlighter-rouge"> thingy is the [Liquid filter](./liquid-filters), which represents the iframe where the web player will be included later.\n\nWhen all this work is done you are ready to take a first look.  \nThe following command generates your site and starts a local webserver for a preview. You can check your new podcasting website by opening [http://localhost:4000](http://localhost:4000).\n\n{% highlight shell %}\n$ octopod --url \"http://localhost:4000\" --server\n{% endhighlight %}\n\nIf everything is alright you can finally generate your \"real\" Site:\n\n{% highlight shell %}\n$ octopod\n{% endhighlight %}\n\nAnd deploy it to your server:\n\n{% highlight shell %}\n$ octopod deploy\n{% endhighlight %}\n\n*Warning*: The Rsync settings in your </code>_config.yml<code class="highlighter-rouge"> are mandatory for this last step. But it is no problem to upload the generated website from the </code>_site<code class="highlighter-rouge"> subdirectory via FTP or something.\n\n_Continue with [The command line tool](/command_line)_.\n", "dir"=&gt;"/", "name"=&gt;"usage.md", "path"=&gt;"pages/usage.md", "url"=&gt;"/usage"}</code> thingy is the <a href="./liquid-filters">Liquid filter</a>, which represents the iframe where the web player will be included later.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>When all this work is done you are ready to take a first look.<br />
+The following command generates your site and starts a local webserver for a preview. You can check your new podcasting website by opening <a href="http://localhost:4000">http://localhost:4000</a>.</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>octopod --url <span class="s2">"http://localhost:4000"</span> --server</code></pre></figure>
+
+<p>If everything is alright you can finally generate your “real” Site:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>octopod</code></pre></figure>
+
+<p>And deploy it to your server:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>octopod deploy</code></pre></figure>
+
+<p><em>Warning</em>: The Rsync settings in your <code class="highlighter-rouge">_config.yml</code> are mandatory for this last step. But it is no problem to upload the generated website from the <code class="highlighter-rouge">_site</code> subdirectory via FTP or something.</p>
+
+<p><em>Continue with <a href="/command_line">The command line tool</a></em>.</p>
+
+          </div>
+        </div>
+        <div id="sidebar" class="col-sm-4">
+          <div class="well">
+            <div class="page-header">
+  <h3>
+    jekyll - octopod
+    <br/><small>Static Site Podcast Publishing for Geeks</small>
+  </h3>
+</div>
+
+<p class="text-center">
+  <img width="200px" src="https://jekyll-octopod.github.io/img/logo-360x360.png" alt="jekyll - octopod logo">
+</p>
+
+<p>Static Site Podcast Publishing for Geeks.</p>
+
+<hr/>
+
+<h3> Documentation - Topics</h3>
+
+<ol>
+<li><a  href="https://jekyll-octopod.github.io/prerequisites">Prerequisites</a></li>
+<li><a  href="https://jekyll-octopod.github.io/installation">Installation</a></li>
+<li><a  href="https://jekyll-octopod.github.io/demo">Demo</a></li>
+<li class="active"><a  class="active" href="https://jekyll-octopod.github.io/usage">Usage</a></li>
+<li><a  href="https://jekyll-octopod.github.io/command_line">Command Line Tool</a></li>
+<li><a  href="https://jekyll-octopod.github.io/liquid_filters.md">Liquid Filters</a></li>
+<li><a  href="https://jekyll-octopod.github.io/post_structure">Post structure</a></li>
+<li><a  href="https://jekyll-octopod.github.io/contributions">Prerequisites</a></li>
+<li><a  href="https://jekyll-octopod.github.io/credits">Credits</a></li>
+<li><a  href="https://jekyll-octopod.github.io/license">License</a></li>
+<li><a  href="https://jekyll-octopod.github.io/conduct">Code of Conduct</a></li>
+</ol>
+
+
+<h3> Source Code </h3>
+
+<ul>
+  <li>
+    <a href="https://github.com/jekyll-octopod/jekyll-octopod">
+      <i class="fa fa-github"></i> Github
+    </a>
+  </li>
+</ul>
+
+<h3>Social Media</h3>
+
+For us on Twitter for News!
+<br/>
+<a href="https://twitter.com/jekyll_octopod" class="twitter-follow-button" data-show-count="false">Follow @jekyll_octopod</a>
+
+          </div>
+        </div>
+      </div>
+      <div class="row" id="footer">
+        <small class="pull-right">Powered by <a href="https://github.com/pattex/octopod">Octopod</a> and <a href="http://jekyllrb.com/">Jekyll</a>.</small>
+      </div>
+    </div><!-- /.container -->
+  </div><!-- /.container -->
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+</html>

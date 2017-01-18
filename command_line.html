@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>jekyll - octopod - jekyll-octopod</title>
+  <title>jekyll - octopod - Command Line Tool</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="description" content="Static Site Podcast Publishing for Geeks.
@@ -64,95 +64,45 @@
       <div class="row ">
         <div class="col-sm-8">
           <div class="content">
-            <h1 id="jekyll-octopod">jekyll-octopod</h1>
+            <h1 id="command-line-tool">Command Line Tool</h1>
 
-<p><a href="https://badge.fury.io/rb/jekyll-octopod"><img src="https://badge.fury.io/rb/jekyll-octopod.svg" alt="Gem Version" /></a></p>
+<p>The octopod-jekyll command line commands are:</p>
 
-<p>A podcast publishing extension for the static site generator <a href="https://jekyllrb.com/">Jekyll</a></p>
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>octopod b[uild]
+<span class="c"># builds from current path . to ./_site</span>
 
-<h2 id="tldr">tl;dr</h2>
+<span class="gp">$ </span>octopod build &lt;path/to/target&gt;                   
+<span class="c"># compiles and builds the site from the current path . to path/to/target</span>
 
-<p>You generate a static web site for your podcast on your own computer, test drive it and sync it to your web space.</p>
+<span class="gp">$ </span>octopod build &lt;path/to/source&gt; &lt;path/to/target&gt;  
+<span class="c"># compiles from source_path to  path/to/target</span>
 
-<p>No Wordpress, PHP, Ruby other scripting language, database management system or any other dynamic component is needed on your server.
-This increases security immensely.</p>
+<span class="gp">$ </span>octopod import &lt;importer name&gt; &lt;options&gt;
+<span class="c"># imports posts using named import script</span>
 
-<h2 id="tell-me-more">Tell me more!</h2>
+<span class="gp">$ </span>octopod setup
+<span class="c"># Sets up Jekyll site to become podcast-aware, copies assets and default config.</span>
+<span class="c"># Asks for confirmation on file overwrite.</span>
 
-<p>If you want to take a look: See (and listen to) Stefan’s podcast <a href="https://aua-uff-co.de">Aua-Uff-Code!</a>.</p>
+<span class="gp">$ </span>octopod episode
+<span class="c"># adds a post for a new episode</span>
 
-<p>The page you will get when you follow the installation instructions looks like this one:</p>
+<span class="gp">$ </span>octopod deploy
+<span class="c"># deploys your site via rsync</span>
 
-<p><img src="img/demo.png" width="600" alt="screenshot" /></p>
+<span class="gp">$ </span>octopod &lt;<span class="nb">command</span>&gt; --help
+<span class="c"># for more information on a specific command.</span>
 
-<p>Technically speaking, jekyll-octopod is a Jekyll plugin and a Ruby Gem. It
-contains of scripts, templates, helpers and extensions to publish your
-podcasts in the cool text file lover’s way.</p>
+<span class="gp">$ </span>octopod s[erver]
+<span class="c"># Starts the server</span></code></pre></figure>
 
-<p>If you are not afraid of the command line on your computer and text files are the
-stuff that heat up your geeky little heart, jekyll-octopod may be worth a trial
-to publish your podcasts.</p>
+<p>Configuration is read from ‘<source />/_config.yml’ but can be overridden.
+Available options are documented in <code class="highlighter-rouge">_config.yml</code>.
+In case, you deleted some of the options, a full reference can be found in <code class="highlighter-rouge">_config.yml.sample</code>.</p>
 
-<p>The underlying assumptions of jekyll-octopod are that static content
-should be delivered statically and text files are the perfect way to handle
-podcast metadata. Jekyll-octopod makes it easy to generate and deploy a
-website with feeds for your podcast out of one textfile and at least one audio
-file per episode.</p>
+<p>All derived Jekyll command line tasks can be found in Jekyll’s <a href="http://jekyllrb.com/docs/usage/">Usage Documentation</a>, from which the octopod command inherits most of its functionality)</p>
 
-<h2 id="features">Features</h2>
-
-<p>jekyll-octopod brings innately:</p>
-
-<ul>
-  <li>iTunes-ready <em>paged</em> episode feeds for different file formats (e.g. mp3, ogg, m4a)</li>
-  <li>a ready to use <a href="http://bootflat.github.io/">Bootflat</a> and  <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>-based, responsive (i.e. mobile friendly) layout modifiable to your heart’s desire.</li>
-  <li><a href="https://flattr.com/">Flattr</a> support on the website and in the episode feed.</li>
-  <li><a href="https://twitter.com">Twitter</a> integration on the website.</li>
-  <li>comments via <a href="http://disqus.com/">Disqus</a>.</li>
-  <li><a href="http://podlove.org/podlove-web-player/">Podlove Web Player</a> in it’s current version 3.0.</li>
-  <li>Static player pages that are embeddable in iframes for your other or affiliates’ sites.</li>
-  <li><a href="http://podlove.org/alternate-feeds/">Podlove Alternate Feeds</a>.</li>
-  <li><a href="http://podlove.org/simple-chapters/">Podlove Simple Chapters</a>.</li>
-  <li><a href="http://podlove.org/podlove-subscribe-button/">Podlove Subscribe Button</a> for easy podcast subscription on any operating system, including mobile phones.</li>
-  <li>https compatibility.</li>
-  <li>Google search integration.</li>
-  <li>Easy show notes creation.</li>
-</ul>
-
-<p><strong>Is this production ready?</strong></p>
-
-<p>We use it in production, so we believe it is.
-But it is very likely, that it still contains bugs. And there is no guarantee that behavior will not change with the next update :-).</p>
-
-<p>Hopefully you are brave enough to play with this cute little toy anyway.</p>
-
-<h2 id="documentation">Documentation</h2>
-
-<p>Detailed documentation is provided on the folloging pages:</p>
-
-<ol>
-<li><a href="https://jekyll-octopod.github.io/prerequisites">Prerequisites</a></li>
-<li><a href="https://jekyll-octopod.github.io/installation">Installation</a></li>
-<li><a href="https://jekyll-octopod.github.io/demo">Demo</a></li>
-<li><a href="https://jekyll-octopod.github.io/usage">Usage</a></li>
-<li><a href="https://jekyll-octopod.github.io/command_line">Command Line Tool</a></li>
-<li><a href="https://jekyll-octopod.github.io/liquid_filters.md">Liquid Filters</a></li>
-<li><a href="https://jekyll-octopod.github.io/post_structure">Post structure</a></li>
-<li><a href="https://jekyll-octopod.github.io/contributions">Prerequisites</a></li>
-<li><a href="https://jekyll-octopod.github.io/credits">Credits</a></li>
-<li><a href="https://jekyll-octopod.github.io/license">License</a></li>
-<li><a href="https://jekyll-octopod.github.io/conduct">Code of Conduct</a></li>
-</ol>
-
-<p>You will find a link to the next page in the suggested reading track at the bottom of each page.</p>
-
-<p><em>Continue reading with <a href="prerequisites">Prerequisites</a>.</em></p>
-
-<h2 id="maintainer">Maintainer</h2>
-
-<p>Stefan Haslinger <a href="mailto:stefan.haslinger@informatom.com">stefan.haslinger@informatom.com</a></p>
-
-<p>Credits go to lots of <a href="credits">people and projects</a>.</p>
+<p><em>Continue reading with <a href="/liquid_filters">Liquid filters</a>.</em></p>
 
           </div>
         </div>
@@ -180,7 +130,7 @@ But it is very likely, that it still contains bugs. And there is no guarantee th
 <li><a  href="https://jekyll-octopod.github.io/installation">Installation</a></li>
 <li><a  href="https://jekyll-octopod.github.io/demo">Demo</a></li>
 <li><a  href="https://jekyll-octopod.github.io/usage">Usage</a></li>
-<li><a  href="https://jekyll-octopod.github.io/command_line">Command Line Tool</a></li>
+<li class="active"><a  class="active" href="https://jekyll-octopod.github.io/command_line">Command Line Tool</a></li>
 <li><a  href="https://jekyll-octopod.github.io/liquid_filters.md">Liquid Filters</a></li>
 <li><a  href="https://jekyll-octopod.github.io/post_structure">Post structure</a></li>
 <li><a  href="https://jekyll-octopod.github.io/contributions">Prerequisites</a></li>
