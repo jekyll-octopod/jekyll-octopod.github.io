@@ -7,14 +7,14 @@
     <atom:link rel="alternate" href="https://jekyll-octopod.github.io/episodes.mp3.rss" type="application/rss+xml" title="mp3 Episode RSS-Feed"/>
     <description>Static Site Podcast Publishing for Geeks.
 </description>
-    <lastBuildDate>Wed, 18 Jan 2017 21:42:40 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 09 Feb 2017 11:44:51 +0100</lastBuildDate>
     <language>en</language>
 
     <itunes:summary>Static Site Podcast Publishing for Geeks.
 </itunes:summary>
     <itunes:author>Stefan Haslinger</itunes:author>
     <itunes:explicit>no</itunes:explicit>
-    <itunes:image href="http://jekyll-octopod.github.io/img/logo-itunes.jpg" />
+    <itunes:image href="https://jekyll-octopod.github.io/img/logo-itunes.jpg" />
     <itunes:owner>
       <itunes:name>Stefan Haslinger</itunes:name>
       <itunes:email>stefan.haslinger@informatom.com</itunes:email>
