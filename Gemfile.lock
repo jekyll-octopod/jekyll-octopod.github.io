@@ -48,7 +48,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  jekyll-octopod (= 0.8.7)
+  jekyll-octopod
 
 BUNDLED WITH
-   1.13.6
+   1.14.5

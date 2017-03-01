@@ -96,10 +96,12 @@ jekyll-octopod kindly helps you to generate these files with the <code class="hi
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="nn">---</span>
 <span class="s">title</span><span class="pi">:</span> <span class="s">Why I &lt;3 Octopod</span>
 <span class="s">subtitle</span><span class="pi">:</span> <span class="s">A Subtle Subtitle</span>
-<span class="s">date</span><span class="pi">:</span> <span class="s">May 22nd, 2016</span>
-<span class="s">layout</span><span class="pi">:</span> <span class="s">post</span>
-<span class="s">author</span><span class="pi">:</span> <span class="s">Uncle Octopod</span>
-<span class="s">explicit</span><span class="pi">:</span> <span class="s1">'</span><span class="s">no'</span>
+<span class="s">episode-cover</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/img/episode-cover0.jpg'</span><span class="nv"> </span><span class="s">#</span><span class="nv"> </span><span class="s">This</span><span class="nv"> </span><span class="s">can</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">used</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">provide</span><span class="nv"> </span><span class="s">episode-specific</span><span class="nv"> </span><span class="s">images</span>
+<span class="s">datum:</span><span class="nv"> </span><span class="s">March</span><span class="nv"> </span><span class="s">22nd</span><span class="nv"> </span><span class="s">2016</span><span class="nv"> </span><span class="s">#</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">longer</span><span class="nv"> </span><span class="s">necessary,</span><span class="nv"> </span><span class="s">but</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">en</span><span class="nv"> </span><span class="s">installations,</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">still</span><span class="nv"> </span><span class="s">respected</span>
+<span class="s">layout:</span><span class="nv"> </span><span class="s">post</span>
+<span class="s">author:</span><span class="nv"> </span><span class="s">Uncle</span><span class="nv"> </span><span class="s">Octopod</span>
+<span class="s">explicit:</span><span class="nv"> </span><span class="s">'no'</span>
+<span class="s">duration:</span><span class="nv"> </span><span class="s">"0:03:13"</span>
 <span class="s">audio</span><span class="pi">:</span>
   <span class="s">m4a</span><span class="pi">:</span> <span class="s">name.m4a</span>
   <span class="s">mp3</span><span class="pi">:</span> <span class="s">name.mp3</span>
@@ -107,10 +109,11 @@ jekyll-octopod kindly helps you to generate these files with the <code class="hi
 <span class="s">chapters</span><span class="pi">:</span>
 <span class="pi">-</span> <span class="s1">'</span><span class="s">00:00:00.000</span><span class="nv"> </span><span class="s">Intro.'</span>
 <span class="pi">-</span> <span class="s1">'</span><span class="s">00:00:30.000</span><span class="nv"> </span><span class="s">Outro.'</span>
+<span class="s">posts-dir</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/path/to/post/dir"</span> <span class="c1"># default: '_posts'</span>
 <span class="nn">---</span>
 <span class="c1">## </span>
 
-<span class="pi">{{</span> <span class="nv">page | web_player</span><span class="pi">:</span><span class="nv">site</span> <span class="pi">}}</span>
+<span class="pi">{{</span> <span class="nv">podigee_player page</span> <span class="pi">}}</span>
 
 <span class="c1">## Shownotes and Links</span>
 
@@ -118,7 +121,7 @@ jekyll-octopod kindly helps you to generate these files with the <code class="hi
 
 <p>The part between the “—” and the “—” is the <a href="http://jekyllrb.com/docs/frontmatter/">YAML front matter</a>. 
 This is where all the metadata is stored. Below the YAML frontmatter is the area (body) where you can write down your post’s content (like the show notes and stuff). 
-This strange looking <code class="highlighter-rouge"><span class="p">{</span><span class="err">{</span><span class="w"> </span><span class="err">page</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">web_player_moderator:site</span><span class="w"> </span><span class="p">}</span><span class="err">}</span></code> thingy is the <a href="./liquid-filters">Liquid filter</a>, 
+This strange looking <code class="highlighter-rouge"><span class="p">{</span><span class="err">{</span><span class="w"> </span><span class="err">podigee_player</span><span class="w"> </span><span class="err">page</span><span class="w"> </span><span class="p">}</span><span class="err">}</span></code> thingy is the <a href="./liquid-filters">Liquid filter</a>, 
 which represents the iframe where the web player will be included later.</p>
 
 <p>When all this work is done you are ready to take a first look.<br />

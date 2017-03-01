@@ -10137,3 +10137,12 @@ a.list-group-item {
   margin: 0;
   overflow: visible;
   clip: auto; }
+
+h1 small, h2 small, h3 small {
+  color: #77778C; }
+
+btn small, .btn small {
+  color: #2A2A2A; }
+
+.episode_date {
+  font-size: 45%; }

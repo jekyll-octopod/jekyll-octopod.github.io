@@ -100,9 +100,41 @@
 Available options are documented in <code class="highlighter-rouge">_config.yml</code>.
 In case, you deleted some of the options, a full reference can be found in <code class="highlighter-rouge">_config.yml.sample</code>.</p>
 
-<p>All derived Jekyll command line tasks can be found in Jekyll’s <a href="http://jekyllrb.com/docs/usage/">Usage Documentation</a>, from which the octopod command inherits most of its functionality)</p>
+<p>For <code class="highlighter-rouge">octopod episode</code>, the following options are available to override defaults:</p>
 
-<p>If there is an error when building the site, using the <code class="highlighter-rouge">-t</code> option prints out the full stack trace, which can be helpful in debugging and improves bug reports.</p>
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">-a, --author <span class="o">[</span>AUTHOR]
+
+-c, --chapters <span class="o">[</span>CHAPTER1, CHAPTER2...]
+<span class="c"># Chapters have the format "HH:MM:SS.sss Title"</span>
+
+-d, --duration <span class="o">[</span>DURATION]
+<span class="c"># "HH:MM:SS.sss"</span>
+
+-e, --explicit <span class="o">[</span>yes/no]
+
+--episode-cover <span class="o">[</span>PATH]
+<span class="c"># Path to an episode-specific image</span>
+
+-l, --layout <span class="o">[</span>LAYOUT]
+<span class="c"># Defaults to 'post', should never need to be changed</span>
+
+-p, --posts_dir <span class="o">[</span>PATH]
+<span class="c"># Defaults to '_posts'</span>
+
+-s, --subtitle <span class="o">[</span>TEXT]
+
+--summary <span class="o">[</span>TEXT]
+
+--tags <span class="o">[</span>TAG1, TAG2, ...]
+
+-t, --title <span class="o">[</span>TEXT]</code></pre></figure>
+
+<p>All derived Jekyll command line tasks can be found in Jekyll’s 
+<a href="http://jekyllrb.com/docs/usage/">Usage Documentation</a>, from which the octopod 
+command inherits most of its functionality.</p>
+
+<p>If there is an error when building the site, using the <code class="highlighter-rouge">-t</code> option prints 
+out the full stack trace, which can be helpful in debugging and improves bug reports.</p>
 
 <p><em>Continue reading with <a href="/liquid_filters">Liquid filters</a>.</em></p>
 
