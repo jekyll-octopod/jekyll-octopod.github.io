@@ -68,32 +68,32 @@
 
 <p>The octopod-jekyll command line commands are:</p>
 
-<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>octopod b[uild]
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nv">$ </span>octopod b[uild]
 <span class="c"># builds from current path . to ./_site</span>
 
-<span class="gp">$ </span>octopod build &lt;path/to/target&gt;                   
+<span class="nv">$ </span>octopod build &lt;path/to/target&gt;                   
 <span class="c"># compiles and builds the site from the current path . to path/to/target</span>
 
-<span class="gp">$ </span>octopod build &lt;path/to/source&gt; &lt;path/to/target&gt;  
+<span class="nv">$ </span>octopod build &lt;path/to/source&gt; &lt;path/to/target&gt;  
 <span class="c"># compiles from source_path to  path/to/target</span>
 
-<span class="gp">$ </span>octopod import &lt;importer name&gt; &lt;options&gt;
+<span class="nv">$ </span>octopod import &lt;importer name&gt; &lt;options&gt;
 <span class="c"># imports posts using named import script</span>
 
-<span class="gp">$ </span>octopod setup
+<span class="nv">$ </span>octopod setup
 <span class="c"># Sets up Jekyll site to become podcast-aware, copies assets and default config.</span>
 <span class="c"># Asks for confirmation on file overwrite.</span>
 
-<span class="gp">$ </span>octopod episode
+<span class="nv">$ </span>octopod episode
 <span class="c"># adds a post for a new episode</span>
 
-<span class="gp">$ </span>octopod deploy
+<span class="nv">$ </span>octopod deploy
 <span class="c"># deploys your site via rsync</span>
 
-<span class="gp">$ </span>octopod &lt;<span class="nb">command</span>&gt; --help
+<span class="nv">$ </span>octopod &lt;<span class="nb">command</span><span class="o">&gt;</span> <span class="nt">--help</span>
 <span class="c"># for more information on a specific command.</span>
 
-<span class="gp">$ </span>octopod s[erver]
+<span class="nv">$ </span>octopod s[erver]
 <span class="c"># Starts the server</span></code></pre></figure>
 
 <p>Configuration is read from ‘<source />/_config.yml’ but can be overridden.
@@ -102,32 +102,32 @@ In case, you deleted some of the options, a full reference can be found in <code
 
 <p>For <code class="highlighter-rouge">octopod episode</code>, the following options are available to override defaults:</p>
 
-<figure class="highlight"><pre><code class="language-shell" data-lang="shell">-a, --author <span class="o">[</span>AUTHOR]
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nt">-a</span>, <span class="nt">--author</span> <span class="o">[</span>AUTHOR]
 
--c, --chapters <span class="o">[</span>CHAPTER1, CHAPTER2...]
+<span class="nt">-c</span>, <span class="nt">--chapters</span> <span class="o">[</span>CHAPTER1, CHAPTER2...]
 <span class="c"># Chapters have the format "HH:MM:SS.sss Title"</span>
 
--d, --duration <span class="o">[</span>DURATION]
+<span class="nt">-d</span>, <span class="nt">--duration</span> <span class="o">[</span>DURATION]
 <span class="c"># "HH:MM:SS.sss"</span>
 
--e, --explicit <span class="o">[</span>yes/no]
+<span class="nt">-e</span>, <span class="nt">--explicit</span> <span class="o">[</span><span class="nb">yes</span>/no]
 
---episode-cover <span class="o">[</span>PATH]
+<span class="nt">--episode-cover</span> <span class="o">[</span>PATH]
 <span class="c"># Path to an episode-specific image</span>
 
--l, --layout <span class="o">[</span>LAYOUT]
+<span class="nt">-l</span>, <span class="nt">--layout</span> <span class="o">[</span>LAYOUT]
 <span class="c"># Defaults to 'post', should never need to be changed</span>
 
--p, --posts_dir <span class="o">[</span>PATH]
+<span class="nt">-p</span>, <span class="nt">--posts_dir</span> <span class="o">[</span>PATH]
 <span class="c"># Defaults to '_posts'</span>
 
--s, --subtitle <span class="o">[</span>TEXT]
+<span class="nt">-s</span>, <span class="nt">--subtitle</span> <span class="o">[</span>TEXT]
 
---summary <span class="o">[</span>TEXT]
+<span class="nt">--summary</span> <span class="o">[</span>TEXT]
 
---tags <span class="o">[</span>TAG1, TAG2, ...]
+<span class="nt">--tags</span> <span class="o">[</span>TAG1, TAG2, ...]
 
--t, --title <span class="o">[</span>TEXT]</code></pre></figure>
+<span class="nt">-t</span>, <span class="nt">--title</span> <span class="o">[</span>TEXT]</code></pre></figure>
 
 <p>All derived Jekyll command line tasks can be found in Jekyll’s 
 <a href="http://jekyllrb.com/docs/usage/">Usage Documentation</a>, from which the octopod 
@@ -162,6 +162,7 @@ out the full stack trace, which can be helpful in debugging and improves bug rep
 <ol>
 <li><a  href="https://jekyll-octopod.github.io/prerequisites">Prerequisites</a></li>
 <li><a  href="https://jekyll-octopod.github.io/installation">Installation</a></li>
+<li><a  href="https://jekyll-octopod.github.io/configuration">Configuration</a></li>
 <li><a  href="https://jekyll-octopod.github.io/demo">Demo</a></li>
 <li><a  href="https://jekyll-octopod.github.io/usage">Usage</a></li>
 <li class="active"><a  class="active" href="https://jekyll-octopod.github.io/command_line">Command Line Tool</a></li>

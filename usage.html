@@ -79,7 +79,7 @@
 
 <p>First of all, your new podcast episode needs audio data. Octopod assumes that your ready to use audio files stay within the <code class="highlighter-rouge">episodes</code> directory in your projects root.</p>
 
-<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>cp ~/my_superduper_audio_files/ocp001.m4a episodes</code></pre></figure>
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nv">$ </span><span class="nb">cp</span> ~/my_superduper_audio_files/ocp001.m4a episodes</code></pre></figure>
 
 <p>In addition, jekyll-octopod assumes that the different audio files of each of your episodes are the same content in various formats — with the same duration and everything.<br />
 If they are not, you may confuse your listeners — at least when you are using the chapters feature.</p>
@@ -89,27 +89,27 @@ jekyll-octopod kindly helps you to generate these files with the <code class="hi
 
 <p>The following command</p>
 
-<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>octopod episode --title <span class="s2">"Why I &lt;3 Octopod"</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nv">$ </span>octopod episode <span class="nt">--title</span> <span class="s2">"Why I &lt;3 Octopod"</span></code></pre></figure>
 
 <p>will generate you a template called <strong>YYYY-MM-DD-why-i-_3-octopod.md</strong> (YYYY-MM-DD represents the current date) in your <code class="highlighter-rouge">_posts</code> subdirectory. When you open it in your text editor you’ll see something like this:</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="nn">---</span>
-<span class="s">title</span><span class="pi">:</span> <span class="s">Why I &lt;3 Octopod</span>
-<span class="s">subtitle</span><span class="pi">:</span> <span class="s">A Subtle Subtitle</span>
-<span class="s">episode-cover</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/img/episode-cover0.jpg'</span><span class="nv"> </span><span class="s">#</span><span class="nv"> </span><span class="s">This</span><span class="nv"> </span><span class="s">can</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">used</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">provide</span><span class="nv"> </span><span class="s">episode-specific</span><span class="nv"> </span><span class="s">images</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">Why I &lt;3 Octopod</span>
+<span class="na">subtitle</span><span class="pi">:</span> <span class="s">A Subtle Subtitle</span>
+<span class="na">episode-cover</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/img/episode-cover0.jpg'</span><span class="nv"> </span><span class="s">#</span><span class="nv"> </span><span class="s">This</span><span class="nv"> </span><span class="s">can</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">used</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">provide</span><span class="nv"> </span><span class="s">episode-specific</span><span class="nv"> </span><span class="s">images</span>
 <span class="s">datum:</span><span class="nv"> </span><span class="s">March</span><span class="nv"> </span><span class="s">22nd</span><span class="nv"> </span><span class="s">2016</span><span class="nv"> </span><span class="s">#</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">longer</span><span class="nv"> </span><span class="s">necessary,</span><span class="nv"> </span><span class="s">but</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">en</span><span class="nv"> </span><span class="s">installations,</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">still</span><span class="nv"> </span><span class="s">respected</span>
 <span class="s">layout:</span><span class="nv"> </span><span class="s">post</span>
 <span class="s">author:</span><span class="nv"> </span><span class="s">Uncle</span><span class="nv"> </span><span class="s">Octopod</span>
 <span class="s">explicit:</span><span class="nv"> </span><span class="s">'no'</span>
 <span class="s">duration:</span><span class="nv"> </span><span class="s">"0:03:13"</span>
-<span class="s">audio</span><span class="pi">:</span>
-  <span class="s">m4a</span><span class="pi">:</span> <span class="s">name.m4a</span>
-  <span class="s">mp3</span><span class="pi">:</span> <span class="s">name.mp3</span>
-  <span class="s">ogg</span><span class="pi">:</span> <span class="s">name.ogg</span>
-<span class="s">chapters</span><span class="pi">:</span>
+<span class="na">audio</span><span class="pi">:</span>
+  <span class="na">m4a</span><span class="pi">:</span> <span class="s">name.m4a</span>
+  <span class="na">mp3</span><span class="pi">:</span> <span class="s">name.mp3</span>
+  <span class="na">ogg</span><span class="pi">:</span> <span class="s">name.ogg</span>
+<span class="na">chapters</span><span class="pi">:</span>
 <span class="pi">-</span> <span class="s1">'</span><span class="s">00:00:00.000</span><span class="nv"> </span><span class="s">Intro.'</span>
 <span class="pi">-</span> <span class="s1">'</span><span class="s">00:00:30.000</span><span class="nv"> </span><span class="s">Outro.'</span>
-<span class="s">posts-dir</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/path/to/post/dir"</span> <span class="c1"># default: '_posts'</span>
+<span class="na">posts-dir</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/path/to/post/dir"</span> <span class="c1"># default: '_posts'</span>
 <span class="nn">---</span>
 <span class="c1">## </span>
 
@@ -121,28 +121,28 @@ jekyll-octopod kindly helps you to generate these files with the <code class="hi
 
 <p>The part between the “—” and the “—” is the <a href="http://jekyllrb.com/docs/frontmatter/">YAML front matter</a>. 
 This is where all the metadata is stored. Below the YAML frontmatter is the area (body) where you can write down your post’s content (like the show notes and stuff). 
-This strange looking <code class="highlighter-rouge"><span class="p">{</span><span class="err">{</span><span class="w"> </span><span class="err">podigee_player</span><span class="w"> </span><span class="err">page</span><span class="w"> </span><span class="p">}</span><span class="err">}</span></code> thingy is the <a href="./liquid-filters">Liquid filter</a>, 
+This strange looking <code class="highlighter-rouge">{{ podigee_player page }}</code> thingy is the <a href="./liquid-filters">Liquid filter</a>, 
 which represents the iframe where the web player will be included later.</p>
 
 <p>When all this work is done you are ready to take a first look.<br />
 The following command generates your site and starts a local webserver for a preview. You can check your new podcasting website by opening <a href="http://localhost:4000">http://localhost:4000</a>.</p>
 
-<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>octopod --url <span class="s2">"http://localhost:4000"</span> --server</code></pre></figure>
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nv">$ </span>octopod <span class="nt">--url</span> <span class="s2">"http://localhost:4000"</span> <span class="nt">--server</span></code></pre></figure>
 
 <p>Since <code class="highlighter-rouge">localhost:4000</code> is the default, a shorter command with the same result is:</p>
 
-<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>octopod s[erve]</code></pre></figure>
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nv">$ </span>octopod s[erve]</code></pre></figure>
 
 <p>If everything looks good, you can generate the site with the proper url from your configuration. 
 <em>Warning</em>: Don’t upload the <code class="highlighter-rouge">_site</code> subdirectory after serving it locally, as all links will assume running on <code class="highlighter-rouge">localhost</code> and this will cause issues!</p>
 
 <p>To build your site use</p>
 
-<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>octopod b[uild]</code></pre></figure>
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nv">$ </span>octopod b[uild]</code></pre></figure>
 
 <p>And deploy it to your server:</p>
 
-<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>octopod deploy</code></pre></figure>
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nv">$ </span>octopod deploy</code></pre></figure>
 
 <p><em>Warning</em>: The Rsync settings in your <code class="highlighter-rouge">_config.yml</code> are mandatory for this last step. 
 If you don’t wish to use rsync, uploading the website from the <code class="highlighter-rouge">_site</code> subdirectory via FTP or whichever tool you prefer works just fine.</p>
@@ -173,6 +173,7 @@ If you don’t wish to use rsync, uploading the website from the <code class="hi
 <ol>
 <li><a  href="https://jekyll-octopod.github.io/prerequisites">Prerequisites</a></li>
 <li><a  href="https://jekyll-octopod.github.io/installation">Installation</a></li>
+<li><a  href="https://jekyll-octopod.github.io/configuration">Configuration</a></li>
 <li><a  href="https://jekyll-octopod.github.io/demo">Demo</a></li>
 <li class="active"><a  class="active" href="https://jekyll-octopod.github.io/usage">Usage</a></li>
 <li><a  href="https://jekyll-octopod.github.io/command_line">Command Line Tool</a></li>
