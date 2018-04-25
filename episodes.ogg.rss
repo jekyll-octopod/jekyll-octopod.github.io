@@ -3,8 +3,8 @@
   <channel>
     <title>jekyll - octopod</title>
     <link>https://jekyll-octopod.github.io</link>
-    <atom:link href="https://jekyll-octopod.github.io/episodes.mp3.rss" rel="self" type="application/rss+xml" title="mp3 Episode RSS-Feed"/>
-    <atom:link rel="alternate" href="https://jekyll-octopod.github.io/episodes.ogg.rss" type="application/rss+xml" title="ogg Episode RSS-Feed"/>
+    <atom:link href="https://jekyll-octopod.github.io/episodes.ogg.rss" rel="self" type="application/rss+xml" title="ogg Episode RSS-Feed"/>
+    <atom:link rel="alternate" href="https://jekyll-octopod.github.io/episodes.mp3.rss" type="application/rss+xml" title="mp3 Episode RSS-Feed"/>
     <description>Static Site Podcast Publishing for Geeks.
 </description>
     <lastBuildDate>Wed, 25 Apr 2018 18:44:27 +0200</lastBuildDate>
