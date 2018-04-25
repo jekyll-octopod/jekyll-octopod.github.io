@@ -7,7 +7,11 @@
     <atom:link rel="alternate" href="https://jekyll-octopod.github.io/episodes.ogg.rss" type="application/rss+xml" title="ogg Episode RSS-Feed"/>
     <description>Static Site Podcast Publishing for Geeks.
 </description>
+<<<<<<< HEAD
     <lastBuildDate>Wed, 25 Apr 2018 18:42:18 +0200</lastBuildDate>
+=======
+    <lastBuildDate>Wed, 10 May 2017 19:56:06 +0200</lastBuildDate>
+>>>>>>> 9d64215fdd0412d8ae27147801a33ac826585f29
     <language>en</language>
 
     <itunes:summary>Static Site Podcast Publishing for Geeks.
