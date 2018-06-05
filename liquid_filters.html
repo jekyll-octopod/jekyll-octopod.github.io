@@ -10,19 +10,19 @@
 ">
   <meta name="author" content="Stefan Haslinger">
 
-  <link rel="alternate" type="application/atom+xml" href="https://jekyll-octopod.github.io/general_feed.xml" title="General Site Atom Feed (No Podcast Metadata!)" />
-  <link rel="alternate" type="application/rss+xml" title="ogg Episode RSS-Feed" href="https://jekyll-octopod.github.io/episodes.ogg.rss" />
-<link rel="alternate" type="application/rss+xml" title="mp3 Episode RSS-Feed" href="https://jekyll-octopod.github.io/episodes.mp3.rss" />
+  <link rel="alternate" type="application/atom+xml" href="http://localhost:4000/general_feed.xml" title="General Site Atom Feed (No Podcast Metadata!)" />
+  <link rel="alternate" type="application/rss+xml" title="ogg Episode RSS-Feed" href="http://localhost:4000/episodes.ogg.rss" />
+<link rel="alternate" type="application/rss+xml" title="mp3 Episode RSS-Feed" href="http://localhost:4000/episodes.mp3.rss" />
 
-  <link rel="stylesheet" type="text/css" href="https://jekyll-octopod.github.io/assets/css/main.css">
-  <link rel="stylesheet" type="text/css" href="https://jekyll-octopod.github.io/css/custom_styles.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/main.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:4000/css/custom_styles.css">
 
-  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/jquery.min.js"></script>
-  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/bootstrap.min.js"></script>
-  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/icheck.min.js"></script>
-  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/jquery.fs.selecter.min.js"></script>
-  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/jquery.fs.stepper.min.js"></script>
-  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/custom.js"></script>
+  <script type='text/javascript' src="http://localhost:4000/assets/js/jquery.min.js"></script>
+  <script type='text/javascript' src="http://localhost:4000/assets/js/bootstrap.min.js"></script>
+  <script type='text/javascript' src="http://localhost:4000/assets/js/icheck.min.js"></script>
+  <script type='text/javascript' src="http://localhost:4000/assets/js/jquery.fs.selecter.min.js"></script>
+  <script type='text/javascript' src="http://localhost:4000/assets/js/jquery.fs.stepper.min.js"></script>
+  <script type='text/javascript' src="http://localhost:4000/assets/js/custom.js"></script>
   <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
   
   
@@ -40,11 +40,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="https://jekyll-octopod.github.io">jekyll - octopod</a>
+          <a class="navbar-brand" href="http://localhost:4000">jekyll - octopod</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-              <li><a href="https://jekyll-octopod.github.io">Home</a></li>
+              <li><a href="http://localhost:4000">Home</a></li>
               <li><a href="https://twitter.com/jekyll_octopod"><i class="fa fa-twitter"></i> @jekyll_octopod</a>
               <li><a href="https://github.com/jekyll-octopod/jekyll-octopod/issues"><i class="fa fa-github-alt"></i> Github Issues</a></li>
               <li><a href="https://github.com/jekyll-octopod/jekyll-octopod"><i class="fa fa-github"></i> Github Repo</a></li>
@@ -52,7 +52,7 @@
           <form class="navbar-form navbar-right" action="https://google.com/search" method="get" role="search">
             <div class="form-group">
               <input type="text" class="form-control" placeholder="search item">
-              <input type="hidden" name="q" value="site:jekyll-octopod.github.io" />
+              <input type="hidden" name="q" value="site:localhost" />
             </div>
             <button type="submit" class="btn btn-default">Search</button>
           </form>
@@ -127,9 +127,9 @@
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="nv">page | slug</span> <span class="pi">}}</span> <span class="s">=&gt; '2012_10_02_octopod'</span></code></pre></figure>
 
 <h3 id="split-chapter">Split chapter</h3>
-<p>Splits a chapter, like it is written to the post YAML front matter, into the 
-components ‘start’ — which refers to a single point in time relative to the 
-beginning of the media file — and ‘title’ — which defines the text to be 
+<p>Splits a chapter, like it is written to the post YAML front matter, into the
+components ‘start’ — which refers to a single point in time relative to the
+beginning of the media file — and ‘title’ — which defines the text to be
 the title of the chapter.</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="s1">'</span><span class="s">00:00:00.000</span><span class="nv"> </span><span class="s">Welcome</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">Octopod!'</span> <span class="err">|</span> <span class="nv">split_chapter</span> <span class="pi">}}</span> <span class="s">=&gt;</span>
@@ -138,7 +138,7 @@ the title of the chapter.</p>
 <span class="pi">{{</span> <span class="s1">'</span><span class="s">00:00:00.000</span><span class="nv"> </span><span class="s">Welcome</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">Octopod!'</span> <span class="err">|</span> <span class="nv">split_chapter</span><span class="pi">:</span><span class="s1">'</span><span class="s">start'</span> <span class="pi">}}</span>  <span class="s">=&gt; '00:00:00.000'</span></code></pre></figure>
 
 <h3 id="audio-tag">Audio tag</h3>
-<p>Returns an <code class="highlighter-rouge">&lt;audio&gt;</code> tag for a given page with <code class="highlighter-rouge">&lt;source&gt;</code> tags in it for every 
+<p>Returns an <code class="highlighter-rouge">&lt;audio&gt;</code> tag for a given page with <code class="highlighter-rouge">&lt;source&gt;</code> tags in it for every
 audio file in the page’s YAML front matter.</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="nv">page | audio_tag</span><span class="pi">:</span><span class="nv">site</span> <span class="pi">}}</span></code></pre></figure>
@@ -164,41 +164,41 @@ audio file in the page’s YAML front matter.</p>
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="s1">'</span><span class="s">https://github.com/pattex/octopod'</span> <span class="err">|</span> <span class="nv">host_from_url</span> <span class="pi">}}</span> <span class="s">=&gt; "github.com"</span></code></pre></figure>
 
 <h3 id="disqus-configuration">Disqus configuration</h3>
-<p>Generates the config for disqus integration. If a page object is given, it 
-generates the config variables only for this page. Otherwise, it only 
+<p>Generates the config for disqus integration. If a page object is given, it
+generates the config variables only for this page. Otherwise, it only
 generates the global config variables.</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="nv">site | disqus_config</span> <span class="pi">}}</span>
 <span class="pi">{{</span> <span class="nv">site | disqus_config</span><span class="pi">:</span><span class="nv">page</span> <span class="pi">}}</span></code></pre></figure>
 
 <h3 id="sha1">SHA1</h3>
-<p>Returns the hex-encoded hash value of a given string. The optional 
+<p>Returns the hex-encoded hash value of a given string. The optional
 second argument defines the length of the returned string.</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="s2">"</span><span class="s">Octopod"</span> <span class="err">|</span> <span class="nv">sha1</span> <span class="pi">}}</span>    <span class="s">=&gt; "8b20a59c"</span>
 <span class="pi">{{</span> <span class="s2">"</span><span class="s">Octopod"</span> <span class="err">|</span> <span class="nv">sha1</span><span class="pi">:</span><span class="nv">23</span> <span class="pi">}}</span> <span class="s">=&gt; "8b20a59c8e2dcb5e1f845ba"</span></code></pre></figure>
 
 <h3 id="navigation-list">Navigation list</h3>
-<p>Returns a ready-to-use navigation list of all pages that have <code class="highlighter-rouge">navigation</code> set 
+<p>Returns a ready-to-use navigation list of all pages that have <code class="highlighter-rouge">navigation</code> set
 in their YAML front matter. The list is sorted by the value of <code class="highlighter-rouge">navigation</code>.</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="nv">site | navigation_list</span><span class="pi">:</span><span class="nv">page</span> <span class="pi">}}</span></code></pre></figure>
 
 <h3 id="episode-feeds">Episode feeds</h3>
-<p>Returns an array of all episode feeds named by the convention 
-<code class="highlighter-rouge">episodes.&lt;episode_file_format&gt;.rss</code> within the root directory. Also it 
-contains all additional feeds specified by <code class="highlighter-rouge">additional_feeds</code> in the <code class="highlighter-rouge">_config.yml</code>. 
-If an <code class="highlighter-rouge">episode_file_format</code> or key of <code class="highlighter-rouge">additional_feeds</code> equals the optional 
+<p>Returns an array of all episode feeds named by the convention
+<code class="highlighter-rouge">episodes.&lt;episode_file_format&gt;.rss</code> within the root directory. Also it
+contains all additional feeds specified by <code class="highlighter-rouge">additional_feeds</code> in the <code class="highlighter-rouge">_config.yml</code>.
+If an <code class="highlighter-rouge">episode_file_format</code> or key of <code class="highlighter-rouge">additional_feeds</code> equals the optional
 parameter, it will be skipped.</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="nv">site | episode_feeds</span> <span class="pi">}}</span>
 <span class="pi">{{</span> <span class="nv">site | episode_feeds</span><span class="pi">:</span><span class="nv">mp3</span> <span class="pi">}}</span></code></pre></figure>
 
 <h3 id="episode-feeds-html">Episode feeds HTML</h3>
-<p>Returns HTML links to all episode feeds named by the convention 
-<code class="highlighter-rouge">episodes.&lt;episode_file_format&gt;.rss</code> within the root directory. Also it returns 
-all additional feeds specified by <code class="highlighter-rouge">additional_feeds</code> in the <code class="highlighter-rouge">_config.yml</code>. If 
-an <code class="highlighter-rouge">episode_file_format</code> or key of <code class="highlighter-rouge">additional_feeds</code> equals the optional 
+<p>Returns HTML links to all episode feeds named by the convention
+<code class="highlighter-rouge">episodes.&lt;episode_file_format&gt;.rss</code> within the root directory. Also it returns
+all additional feeds specified by <code class="highlighter-rouge">additional_feeds</code> in the <code class="highlighter-rouge">_config.yml</code>. If
+an <code class="highlighter-rouge">episode_file_format</code> or key of <code class="highlighter-rouge">additional_feeds</code> equals the optional
 parameter, it will be skipped.</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="nv">site | episode_feeds_html</span><span class="pi">:</span><span class="s1">'</span><span class="s">m4a'</span> <span class="pi">}}</span> <span class="s">=&gt;</span>
@@ -210,10 +210,10 @@ parameter, it will be skipped.</p>
       <span class="s">href="http://bitlove.org/octopod/octopod_mp3/feed" /&gt;</span></code></pre></figure>
 
 <h3 id="episode-feeds-rss">Episode feeds RSS</h3>
-<p>Returns RSS-XML links to all episode feeds named by the convention 
-<code class="highlighter-rouge">episodes.&lt;episode_file_format&gt;.rss</code> within the root directory. Also it returns 
-all additional feeds specified by <code class="highlighter-rouge">additional_feeds</code> in the <code class="highlighter-rouge">_config.yml</code>. If an 
-<code class="highlighter-rouge">episode_file_format</code> or key of <code class="highlighter-rouge">additional_feeds</code> equals the optional 
+<p>Returns RSS-XML links to all episode feeds named by the convention
+<code class="highlighter-rouge">episodes.&lt;episode_file_format&gt;.rss</code> within the root directory. Also it returns
+all additional feeds specified by <code class="highlighter-rouge">additional_feeds</code> in the <code class="highlighter-rouge">_config.yml</code>. If an
+<code class="highlighter-rouge">episode_file_format</code> or key of <code class="highlighter-rouge">additional_feeds</code> equals the optional
 parameter, it will be skipped.</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="nv">site | episode_feeds_rss</span><span class="pi">:</span><span class="s1">'</span><span class="s">m4a'</span> <span class="pi">}}</span> <span class="s">=&gt;</span>
@@ -223,6 +223,15 @@ parameter, it will be skipped.</p>
            <span class="s">type="application/rss+xml" title="Torrent Feed m4a"/&gt;</span>
 <span class="s">&lt;atom:link rel="alternate" href="http://bitlove.org/octopod/octopod_mp3/feed"</span>
            <span class="s">type="application/rss+xml" title="Torrent Feed mp3"/&gt;</span></code></pre></figure>
+
+<h2 id="font-awesome-icons">Font Awesome icons</h2>
+<p>Returns the HTML tags for a font awesome icon</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{</span><span class="err">%</span> <span class="nv">icon fa-camera-retro %</span><span class="pi">}</span> <span class="s">=&gt;</span>
+<span class="s">&lt;i class="fa fa-camera-retro"&gt;&lt;/i&gt;</span>
+
+<span class="pi">{</span><span class="err">%</span> <span class="nv">icon fa-camera-retro fa-lg %</span><span class="pi">}</span> <span class="s">=&gt;</span>
+<span class="s">&lt;i class="fa fa-camera-retro fa-lg"&gt;&lt;/i&gt;</span></code></pre></figure>
 
 <p><em>Continue reading with <a href="/post_structure">The post structure</a>.</em></p>
 
@@ -238,7 +247,7 @@ parameter, it will be skipped.</p>
 </div>
 
 <p class="text-center">
-  <img width="200px" src="https://jekyll-octopod.github.io/img/logo-360x360.png" alt="jekyll - octopod logo">
+  <img width="200px" src="http://localhost:4000/img/logo-360x360.png" alt="jekyll - octopod logo">
 </p>
 
 <p>Static Site Podcast Publishing for Geeks.</p>
@@ -248,18 +257,18 @@ parameter, it will be skipped.</p>
 <h3> Documentation - Topics</h3>
 
 <ol>
-<li><a  href="https://jekyll-octopod.github.io/prerequisites">Prerequisites</a></li>
-<li><a  href="https://jekyll-octopod.github.io/installation">Installation</a></li>
-<li><a  href="https://jekyll-octopod.github.io/configuration">Configuration</a></li>
-<li><a  href="https://jekyll-octopod.github.io/demo">Demo</a></li>
-<li><a  href="https://jekyll-octopod.github.io/usage">Usage</a></li>
-<li><a  href="https://jekyll-octopod.github.io/command_line">Command Line Tool</a></li>
-<li class="active"><a  class="active" href="https://jekyll-octopod.github.io/liquid_filters">Liquid Filters</a></li>
-<li><a  href="https://jekyll-octopod.github.io/post_structure">Post structure</a></li>
-<li><a  href="https://jekyll-octopod.github.io/contributions">Contributions</a></li>
-<li><a  href="https://jekyll-octopod.github.io/credits">Credits</a></li>
-<li><a  href="https://jekyll-octopod.github.io/license">License</a></li>
-<li><a  href="https://jekyll-octopod.github.io/conduct">Code of Conduct</a></li>
+<li><a  href="http://localhost:4000/prerequisites">Prerequisites</a></li>
+<li><a  href="http://localhost:4000/installation">Installation</a></li>
+<li><a  href="http://localhost:4000/configuration">Configuration</a></li>
+<li><a  href="http://localhost:4000/demo">Demo</a></li>
+<li><a  href="http://localhost:4000/usage">Usage</a></li>
+<li><a  href="http://localhost:4000/command_line">Command Line Tool</a></li>
+<li class="active"><a  class="active" href="http://localhost:4000/liquid_filters">Liquid Filters</a></li>
+<li><a  href="http://localhost:4000/post_structure">Post structure</a></li>
+<li><a  href="http://localhost:4000/contributions">Contributions</a></li>
+<li><a  href="http://localhost:4000/credits">Credits</a></li>
+<li><a  href="http://localhost:4000/license">License</a></li>
+<li><a  href="http://localhost:4000/conduct">Code of Conduct</a></li>
 </ol>
 
 
