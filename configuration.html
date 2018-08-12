@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>jekyll - octopod - Configuration</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Static Site Podcast Publishing for Geeks.
+">
+  <meta name="author" content="Stefan Haslinger">
+
+  <link rel="alternate" type="application/atom+xml" href="https://jekyll-octopod.github.io/general_feed.xml" title="General Site Atom Feed (No Podcast Metadata!)" />
+  <link rel="alternate" type="application/rss+xml" title="mp3 Episode RSS-Feed" href="https://jekyll-octopod.github.io/episodes.mp3.rss" />
+<link rel="alternate" type="application/rss+xml" title="ogg Episode RSS-Feed" href="https://jekyll-octopod.github.io/episodes.ogg.rss" />
+
+  <link rel="stylesheet" type="text/css" href="https://jekyll-octopod.github.io/assets/css/main.css">
+  <link rel="stylesheet" type="text/css" href="https://jekyll-octopod.github.io/css/custom_styles.css">
+
+  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/jquery.min.js"></script>
+  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/bootstrap.min.js"></script>
+  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/icheck.min.js"></script>
+  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/jquery.fs.selecter.min.js"></script>
+  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/jquery.fs.stepper.min.js"></script>
+  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/custom.js"></script>
+  <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  
+  
+  
+</head>
+
+<body>
+  <div class="container-fluid">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="https://jekyll-octopod.github.io">jekyll - octopod</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+              <li><a href="https://jekyll-octopod.github.io">Home</a></li>
+              <li><a href="https://twitter.com/jekyll_octopod"><i class="fa fa-twitter"></i> @jekyll_octopod</a>
+              <li><a href="https://github.com/jekyll-octopod/jekyll-octopod/issues"><i class="fa fa-github-alt"></i> Github Issues</a></li>
+              <li><a href="https://github.com/jekyll-octopod/jekyll-octopod"><i class="fa fa-github"></i> Github Repo</a></li>
+          </ul>
+          <form class="navbar-form navbar-right" action="https://google.com/search" method="get" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="search item">
+              <input type="hidden" name="q" value="site:jekyll-octopod.github.io" />
+            </div>
+            <button type="submit" class="btn btn-default">Search</button>
+          </form>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row ">
+        <div class="col-sm-8">
+          <div class="content">
+            <h1 id="configuration">Configuration</h1>
+
+<p>several settings can be specified in the configuration file <code class="highlighter-rouge">_config.yml</code> in the main directory.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>title: Octopod
+url: http://localhost:4000
+
+# needed, if and only if audio files are hosted in a different location
+download_url: http://my.cdn.com/path/to/episodes/
+
+subtitle: Static Site Podcast Publishing for Geeks
+description: My super duper cool podcast.
+author: Uncle Octopod
+email: octopod@example.com
+keywords: [octopod, podcast, magic]
+itunes_categories: [Technology]
+episodes_per_feed_page: 100
+
+player_theme:  default  #  default  /  "default-dark" / legacy / minimal / republica
+
+## Rsync Deploy config #########################################################
+### Be sure your public key is listed in your server's ~/.ssh/authorized_keys file.
+ssh_host: user@host.org
+ssh_port: 22
+document_root: /path/to/your/htdocs/
+rsync_delete: true
+
+twitter_nick: my_twitter_handle
+language: en
+explicit: no  # yes / no / clean
+
+license: CC BY 4.0
+license_url: https://creativecommons.org/licenses/by/4.0/
+license_image_url: https://i.creativecommons.org/l/by/4.0/88x31.png
+
+## Flattr ######################################################################
+flattr_uid: # Flattr will not be used unless this is set
+flattr_button: compact # compact | default
+flattr_mode: auto # auto | manual(default)
+flattr_popout:  1 # 1 | 0 (show popout when hovering mouse over button)
+flattr_language: en_GB # available languages - https://api.flattr.com/rest/v2/languages.txt
+flattr_category: audio # available categories - https://api.flattr.com/rest/v2/categories.txt
+
+## Disqus comments #############################################################
+disqus_shortname: my_disqus_shortname # Disqus will not be used unless this is set
+disqus_developer: 0 # 1 / 0
+
+## Isso comments #########################################################
+use_isso: no # set to 'yes' to include isso comments form
+
+## Feed links ###########################################################
+itunes_url: https://itunes.apple.com/at/podcast/myname/id#myid#
+bitlove_url: https://bitlove.org/myaccount
+fyyd_url: https://fyyd.de/podcast/myaccount/myid
+gpodder_url: https://gpodder.net/podcast/mypodcast
+
+additional_feeds:
+  itunes: http://itunes.apple.com/de/podcast/podcast_name/id42424242
+  torrent_m4a: http://bitlove.org/example_user/example_podcast_m4a/feed
+  torrent_mp3: http://bitlove.org/example_user/example_podcast_mp3/feed
+
+gems: [jekyll-octopod]
+theme: jekyll-bootflat
+</code></pre></div></div>
+
+<p><em>Continue with <a href="/usage">Usage</a></em>.</p>
+
+          </div>
+        </div>
+        <div id="sidebar" class="col-sm-4">
+          <div class="well">
+            <div class="page-header">
+  <h3>
+    jekyll - octopod
+    <br/><small>Static Site Podcast Publishing for Geeks</small>
+  </h3>
+</div>
+
+<p class="text-center">
+  <img width="200px" src="https://jekyll-octopod.github.io/img/logo-360x360.png" alt="jekyll - octopod logo">
+</p>
+
+<p>Static Site Podcast Publishing for Geeks.</p>
+
+<hr/>
+
+<h3> Documentation - Topics</h3>
+
+<ol>
+<li><a  href="https://jekyll-octopod.github.io/prerequisites">Prerequisites</a></li>
+<li><a  href="https://jekyll-octopod.github.io/installation">Installation</a></li>
+<li class="active"><a  class="active" href="https://jekyll-octopod.github.io/configuration">Configuration</a></li>
+<li><a  href="https://jekyll-octopod.github.io/demo">Demo</a></li>
+<li><a  href="https://jekyll-octopod.github.io/usage">Usage</a></li>
+<li><a  href="https://jekyll-octopod.github.io/command_line">Command Line Tool</a></li>
+<li><a  href="https://jekyll-octopod.github.io/theming">Theming</a></li>
+<li><a  href="https://jekyll-octopod.github.io/liquid_filters">Liquid Filters</a></li>
+<li><a  href="https://jekyll-octopod.github.io/post_structure">Post structure</a></li>
+<li><a  href="https://jekyll-octopod.github.io/contributions">Contributions</a></li>
+<li><a  href="https://jekyll-octopod.github.io/credits">Credits</a></li>
+<li><a  href="https://jekyll-octopod.github.io/license">License</a></li>
+<li><a  href="https://jekyll-octopod.github.io/conduct">Code of Conduct</a></li>
+</ol>
+
+
+<h3> Source Code </h3>
+
+<ul>
+  <li>
+    <a href="https://github.com/jekyll-octopod/jekyll-octopod">
+      <i class="fa fa-github"></i> Github
+    </a>
+  </li>
+</ul>
+
+<h3>Social Media</h3>
+
+For us on Twitter for News!
+<br/>
+<a href="https://twitter.com/jekyll_octopod" class="twitter-follow-button" data-show-count="false">Follow @jekyll_octopod</a>
+
+          </div>
+        </div>
+      </div>
+      <div class="row" id="footer">
+        <small class="pull-right">Powered by <a href="https://github.com/pattex/octopod">Octopod</a> and <a href="http://jekyllrb.com/">Jekyll</a>.</small>
+      </div>
+    </div><!-- /.container -->
+  </div><!-- /.container -->
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+</html>

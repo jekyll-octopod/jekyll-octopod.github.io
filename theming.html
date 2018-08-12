@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>jekyll - octopod - Theming</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Static Site Podcast Publishing for Geeks.
+">
+  <meta name="author" content="Stefan Haslinger">
+
+  <link rel="alternate" type="application/atom+xml" href="https://jekyll-octopod.github.io/general_feed.xml" title="General Site Atom Feed (No Podcast Metadata!)" />
+  <link rel="alternate" type="application/rss+xml" title="mp3 Episode RSS-Feed" href="https://jekyll-octopod.github.io/episodes.mp3.rss" />
+<link rel="alternate" type="application/rss+xml" title="ogg Episode RSS-Feed" href="https://jekyll-octopod.github.io/episodes.ogg.rss" />
+
+  <link rel="stylesheet" type="text/css" href="https://jekyll-octopod.github.io/assets/css/main.css">
+  <link rel="stylesheet" type="text/css" href="https://jekyll-octopod.github.io/css/custom_styles.css">
+
+  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/jquery.min.js"></script>
+  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/bootstrap.min.js"></script>
+  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/icheck.min.js"></script>
+  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/jquery.fs.selecter.min.js"></script>
+  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/jquery.fs.stepper.min.js"></script>
+  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/custom.js"></script>
+  <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  
+  
+  
+</head>
+
+<body>
+  <div class="container-fluid">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="https://jekyll-octopod.github.io">jekyll - octopod</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+              <li><a href="https://jekyll-octopod.github.io">Home</a></li>
+              <li><a href="https://twitter.com/jekyll_octopod"><i class="fa fa-twitter"></i> @jekyll_octopod</a>
+              <li><a href="https://github.com/jekyll-octopod/jekyll-octopod/issues"><i class="fa fa-github-alt"></i> Github Issues</a></li>
+              <li><a href="https://github.com/jekyll-octopod/jekyll-octopod"><i class="fa fa-github"></i> Github Repo</a></li>
+          </ul>
+          <form class="navbar-form navbar-right" action="https://google.com/search" method="get" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="search item">
+              <input type="hidden" name="q" value="site:jekyll-octopod.github.io" />
+            </div>
+            <button type="submit" class="btn btn-default">Search</button>
+          </form>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row ">
+        <div class="col-sm-8">
+          <div class="content">
+            <h1 id="theming">Theming</h1>
+
+<p>There are two options, how to do theming, we are aware of:</p>
+
+<h2 id="1-overriding-in-_sass_overridesscss">1. Overriding in <code class="highlighter-rouge">/_sass/_overrides.scss</code></h2>
+
+<p>You can override any css selectors in <code class="highlighter-rouge">/_sass/_overrides.scss</code>. As it is a scss file, so you can use
+the features of SCSS to improve readability, but it could still be a pain.</p>
+
+<h3 id="example">Example</h3>
+
+<p>Typically people want to change the colors of the navbar, so there is a commented example of the
+six colors used in the navbar in the
+<a href="https://github.com/jekyll-octopod/jekyll-octopod/blob/master/assets/_sass/_overrides.scss">overrides file</a>.
+Uncomment and set them to the values you prefer.</p>
+
+<h3 id="drawbacks">Drawbacks</h3>
+
+<ul>
+  <li>You need to be able to find the css selectors in the developer tools of your browser</li>
+  <li>Finding of all the css selectors to be overridden can be a lot of work</li>
+  <li>The theme might not be consistent any more, in case you didn’t find all the occurencies of e.g.
+the color you want to change</li>
+  <li>A lot of css: it might be a huge amount of css selectors, that you have to override</li>
+</ul>
+
+<h2 id="2-overriding-using-the-scss-variables">2. Overriding using the scss variables</h2>
+
+<p>In case you know about scss and gem based themes, you can skip the Gereral Principles chapter,
+inline the jekyll-bootflat theme, override the variables and you are done. Otherwise, let’s get
+into the details:</p>
+
+<h3 id="general-principles">General principles</h3>
+
+<p>First explaination of the general principles:</p>
+
+<p>The theme currently in use is <a href="https://github.com/jekyll-octopod/jekyll-bootflat">jekyll-bootflat</a>.
+It is implementing Bootflat which is based on Bootstrap.
+Bootflat is well documented: <a href="http://bootflat.github.io/">Documentation of Bootflat</a>.</p>
+
+<p>Bootstap in included in version 3.3.6., which is also well documented:
+<a href="https://bootstrapdocs.com/v3.3.6/docs/getting-started/">Documentation of Bootstrap 3.3.6</a></p>
+
+<p>We using jekyll-bootflat as a Gem based theme, a Jekyll feature described in the Jekyll
+documentation of <a href="https://jekyllrb.com/docs/themes/">Gem based themes</a>. This is the documetation
+you absolutely have to read to be able to adapt jekyll-octopod in the most efficient way possible.</p>
+
+<p>Following the principles in
+<a href="https://jekyllrb.com/docs/themes/#overriding-theme-defaults">Overriding theme defaults</a>
+or <a href="https://jekyllrb.com/docs/themes/#converting-gem-based-themes-to-regular-themes">Converting gem-based themes to regular themes</a>
+you may want to change the defaults of</p>
+
+<ul>
+  <li>Bootflat in the <a href="https://github.com/jekyll-octopod/jekyll-bootflat/tree/master/_sass/bootflat">Bootflat scss directory</a></li>
+  <li>Bootstrap in the <a href="https://github.com/jekyll-octopod/jekyll-bootflat/tree/master/_sass/bootstrap">Bootstrap scss directory</a></li>
+</ul>
+
+<h3 id="side-note">Side note</h3>
+
+<p>I ran into the trap to believe that you could change variables simply by overriding them
+in <code class="highlighter-rouge">/_sass/_overrides</code>, but that is not the case. The reason is that for the scss parser of
+Jekyll not the last setting of a scss variable wins, but the last one before resolving it,
+which happens earlier. If that sounds strange, a look at
+<a href="https://github.com/jekyll-octopod/jekyll-bootflat/blob/master/assets/css/main.scss">the import order</a>
+might clear things up: The variables are already used before they have been overridden :-(</p>
+
+<h3 id="example-1">Example</h3>
+
+<p>Now let’s change the colors of the navbar as an example. The file containing the colors of the navbar is:
+<code class="highlighter-rouge">https://github.com/jekyll-octopod/jekyll-bootflat/tree/master/_sass/bootflat</code>
+Whereever you inlined the file in your project, change the variables <em>there</em> to your heart’s desire:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$navbar-background-color:                    $mint-dark !default;
+$navbar-background-color-active:             $mint-light !default;
+$navbar-font-color:                          $black !default;
+$navbar-item-background-color-hover:         $navbar-background-color-active !default;
+$navbar-inverse-background-color:            $black !default;
+</code></pre></div></div>
+
+          </div>
+        </div>
+        <div id="sidebar" class="col-sm-4">
+          <div class="well">
+            <div class="page-header">
+  <h3>
+    jekyll - octopod
+    <br/><small>Static Site Podcast Publishing for Geeks</small>
+  </h3>
+</div>
+
+<p class="text-center">
+  <img width="200px" src="https://jekyll-octopod.github.io/img/logo-360x360.png" alt="jekyll - octopod logo">
+</p>
+
+<p>Static Site Podcast Publishing for Geeks.</p>
+
+<hr/>
+
+<h3> Documentation - Topics</h3>
+
+<ol>
+<li><a  href="https://jekyll-octopod.github.io/prerequisites">Prerequisites</a></li>
+<li><a  href="https://jekyll-octopod.github.io/installation">Installation</a></li>
+<li><a  href="https://jekyll-octopod.github.io/configuration">Configuration</a></li>
+<li><a  href="https://jekyll-octopod.github.io/demo">Demo</a></li>
+<li><a  href="https://jekyll-octopod.github.io/usage">Usage</a></li>
+<li><a  href="https://jekyll-octopod.github.io/command_line">Command Line Tool</a></li>
+<li class="active"><a  class="active" href="https://jekyll-octopod.github.io/theming">Theming</a></li>
+<li><a  href="https://jekyll-octopod.github.io/liquid_filters">Liquid Filters</a></li>
+<li><a  href="https://jekyll-octopod.github.io/post_structure">Post structure</a></li>
+<li><a  href="https://jekyll-octopod.github.io/contributions">Contributions</a></li>
+<li><a  href="https://jekyll-octopod.github.io/credits">Credits</a></li>
+<li><a  href="https://jekyll-octopod.github.io/license">License</a></li>
+<li><a  href="https://jekyll-octopod.github.io/conduct">Code of Conduct</a></li>
+</ol>
+
+
+<h3> Source Code </h3>
+
+<ul>
+  <li>
+    <a href="https://github.com/jekyll-octopod/jekyll-octopod">
+      <i class="fa fa-github"></i> Github
+    </a>
+  </li>
+</ul>
+
+<h3>Social Media</h3>
+
+For us on Twitter for News!
+<br/>
+<a href="https://twitter.com/jekyll_octopod" class="twitter-follow-button" data-show-count="false">Follow @jekyll_octopod</a>
+
+          </div>
+        </div>
+      </div>
+      <div class="row" id="footer">
+        <small class="pull-right">Powered by <a href="https://github.com/pattex/octopod">Octopod</a> and <a href="http://jekyllrb.com/">Jekyll</a>.</small>
+      </div>
+    </div><!-- /.container -->
+  </div><!-- /.container -->
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>jekyll - octopod - jekyll-octopod</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Static Site Podcast Publishing for Geeks.
+">
+  <meta name="author" content="Stefan Haslinger">
+
+  <link rel="alternate" type="application/atom+xml" href="https://jekyll-octopod.github.io/general_feed.xml" title="General Site Atom Feed (No Podcast Metadata!)" />
+  <link rel="alternate" type="application/rss+xml" title="mp3 Episode RSS-Feed" href="https://jekyll-octopod.github.io/episodes.mp3.rss" />
+<link rel="alternate" type="application/rss+xml" title="ogg Episode RSS-Feed" href="https://jekyll-octopod.github.io/episodes.ogg.rss" />
+
+  <link rel="stylesheet" type="text/css" href="https://jekyll-octopod.github.io/assets/css/main.css">
+  <link rel="stylesheet" type="text/css" href="https://jekyll-octopod.github.io/css/custom_styles.css">
+
+  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/jquery.min.js"></script>
+  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/bootstrap.min.js"></script>
+  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/icheck.min.js"></script>
+  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/jquery.fs.selecter.min.js"></script>
+  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/jquery.fs.stepper.min.js"></script>
+  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/custom.js"></script>
+  <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  
+  
+  
+</head>
+
+<body>
+  <div class="container-fluid">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="https://jekyll-octopod.github.io">jekyll - octopod</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+              <li><a href="https://jekyll-octopod.github.io">Home</a></li>
+              <li><a href="https://twitter.com/jekyll_octopod"><i class="fa fa-twitter"></i> @jekyll_octopod</a>
+              <li><a href="https://github.com/jekyll-octopod/jekyll-octopod/issues"><i class="fa fa-github-alt"></i> Github Issues</a></li>
+              <li><a href="https://github.com/jekyll-octopod/jekyll-octopod"><i class="fa fa-github"></i> Github Repo</a></li>
+          </ul>
+          <form class="navbar-form navbar-right" action="https://google.com/search" method="get" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="search item">
+              <input type="hidden" name="q" value="site:jekyll-octopod.github.io" />
+            </div>
+            <button type="submit" class="btn btn-default">Search</button>
+          </form>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row ">
+        <div class="col-sm-8">
+          <div class="content">
+            <h1 id="jekyll-octopod">jekyll-octopod</h1>
+
+<p><a href="https://badge.fury.io/rb/jekyll-octopod"><img src="https://badge.fury.io/rb/jekyll-octopod.svg" alt="Gem Version" /></a></p>
+
+<p>A podcast publishing extension for the static site generator <a href="https://jekyllrb.com/">Jekyll</a></p>
+
+<h2 id="tldr">tl;dr</h2>
+
+<p>You generate a static web site for your podcast on your own computer, test drive it and sync it to your web space.</p>
+
+<p>No Wordpress, PHP, Ruby other scripting language, database management system or any other dynamic component is needed on your server.
+This increases security immensely.</p>
+
+<h2 id="tell-me-more">Tell me more!</h2>
+
+<p>If you want to take a look: See (and listen to) Stefan’s podcast <a href="https://aua-uff-co.de">Aua-Uff-Code!</a>.</p>
+
+<p>The page you will get when you follow the installation instructions looks like this one:</p>
+
+<p><img src="img/demo.png" width="600" alt="screenshot" /></p>
+
+<p>Technically speaking, jekyll-octopod is a Jekyll plugin and a Ruby Gem. It
+contains of scripts, templates, helpers and extensions to publish your
+podcasts in the cool text file lover’s way.</p>
+
+<p>If you are not afraid of the command line on your computer and text files are the
+stuff that heat up your geeky little heart, jekyll-octopod may be worth a trial
+to publish your podcasts.</p>
+
+<p>The underlying assumptions of jekyll-octopod are that static content
+should be delivered statically and text files are the perfect way to handle
+podcast metadata. Jekyll-octopod makes it easy to generate and deploy a
+website with feeds for your podcast out of one textfile and at least one audio
+file per episode.</p>
+
+<h2 id="features">Features</h2>
+
+<p>jekyll-octopod brings innately:</p>
+
+<ul>
+  <li>iTunes-ready <em>paged</em> episode feeds for different file formats (e.g. mp3, ogg, m4a)</li>
+  <li>a ready to use <a href="http://bootflat.github.io/">Bootflat</a> and<br />
+<a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>-based, responsive 
+(i.e. mobile friendly) layout modifiable to your heart’s desire.</li>
+  <li><a href="https://flattr.com/">Flattr</a> support on the website and in the episode feed.</li>
+  <li><a href="https://twitter.com">Twitter</a> integration on the website.</li>
+  <li>comments via <a href="https://disqus.com/">Disqus</a> or</li>
+  <li>comments via <a href="https://posativ.org/isso/">Isso</a>.</li>
+  <li><a href="https://www.podigee.com/en/podcast-player">Podigee Web Player</a>.
+    <ul>
+      <li>Easy chaptermarks</li>
+      <li>Fast-forward &amp; rewind 30s</li>
+      <li>Multiple playback speeds: 0.5x, 1.5x, 2x</li>
+    </ul>
+  </li>
+  <li><a href="http://podlove.org/podlove-subscribe-button/">Podlove Subscribe Button</a> for easy 
+podcast subscription on any operating system, including mobile phones.</li>
+  <li>https compatibility.</li>
+  <li>Google search integration.</li>
+  <li>Easy show notes creation.</li>
+  <li>Including scientific formulas using <a href="https://www.mathjax.org/">Mathjax</a></li>
+</ul>
+
+<p><strong>Is this production ready?</strong></p>
+
+<p>We use it in production, so we believe it is.
+But it is very likely that it still contains bugs. And there is no guarantee that 
+behavior will not change with the next update :-).</p>
+
+<p>Hopefully you are brave enough to play with this cute little toy anyway.</p>
+
+<h2 id="documentation">Documentation</h2>
+
+<p>Detailed documentation is provided on the following pages:</p>
+
+<ol>
+<li><a href="https://jekyll-octopod.github.io/prerequisites">Prerequisites</a></li>
+<li><a href="https://jekyll-octopod.github.io/installation">Installation</a></li>
+<li><a href="https://jekyll-octopod.github.io/configuration">Configuration</a></li>
+<li><a href="https://jekyll-octopod.github.io/demo">Demo</a></li>
+<li><a href="https://jekyll-octopod.github.io/usage">Usage</a></li>
+<li><a href="https://jekyll-octopod.github.io/command_line">Command Line Tool</a></li>
+<li><a href="https://jekyll-octopod.github.io/theming">Theming</a></li>
+<li><a href="https://jekyll-octopod.github.io/liquid_filters">Liquid Filters</a></li>
+<li><a href="https://jekyll-octopod.github.io/post_structure">Post structure</a></li>
+<li><a href="https://jekyll-octopod.github.io/contributions">Contributions</a></li>
+<li><a href="https://jekyll-octopod.github.io/credits">Credits</a></li>
+<li><a href="https://jekyll-octopod.github.io/license">License</a></li>
+<li><a href="https://jekyll-octopod.github.io/conduct">Code of Conduct</a></li>
+</ol>
+
+<p>You will find a link to the next page in the suggested reading track at the bottom of each page.</p>
+
+<p><em>Continue reading with <a href="prerequisites">Prerequisites</a>.</em></p>
+
+<h2 id="maintainer">Maintainer</h2>
+
+<p>Stefan Haslinger <a href="mailto:stefan.haslinger@informatom.com">stefan.haslinger@informatom.com</a></p>
+
+<p>Credits go to lots of <a href="credits">people and projects</a>.</p>
+
+          </div>
+        </div>
+        <div id="sidebar" class="col-sm-4">
+          <div class="well">
+            <div class="page-header">
+  <h3>
+    jekyll - octopod
+    <br/><small>Static Site Podcast Publishing for Geeks</small>
+  </h3>
+</div>
+
+<p class="text-center">
+  <img width="200px" src="https://jekyll-octopod.github.io/img/logo-360x360.png" alt="jekyll - octopod logo">
+</p>
+
+<p>Static Site Podcast Publishing for Geeks.</p>
+
+<hr/>
+
+<h3> Documentation - Topics</h3>
+
+<ol>
+<li><a  href="https://jekyll-octopod.github.io/prerequisites">Prerequisites</a></li>
+<li><a  href="https://jekyll-octopod.github.io/installation">Installation</a></li>
+<li><a  href="https://jekyll-octopod.github.io/configuration">Configuration</a></li>
+<li><a  href="https://jekyll-octopod.github.io/demo">Demo</a></li>
+<li><a  href="https://jekyll-octopod.github.io/usage">Usage</a></li>
+<li><a  href="https://jekyll-octopod.github.io/command_line">Command Line Tool</a></li>
+<li><a  href="https://jekyll-octopod.github.io/theming">Theming</a></li>
+<li><a  href="https://jekyll-octopod.github.io/liquid_filters">Liquid Filters</a></li>
+<li><a  href="https://jekyll-octopod.github.io/post_structure">Post structure</a></li>
+<li><a  href="https://jekyll-octopod.github.io/contributions">Contributions</a></li>
+<li><a  href="https://jekyll-octopod.github.io/credits">Credits</a></li>
+<li><a  href="https://jekyll-octopod.github.io/license">License</a></li>
+<li><a  href="https://jekyll-octopod.github.io/conduct">Code of Conduct</a></li>
+</ol>
+
+
+<h3> Source Code </h3>
+
+<ul>
+  <li>
+    <a href="https://github.com/jekyll-octopod/jekyll-octopod">
+      <i class="fa fa-github"></i> Github
+    </a>
+  </li>
+</ul>
+
+<h3>Social Media</h3>
+
+For us on Twitter for News!
+<br/>
+<a href="https://twitter.com/jekyll_octopod" class="twitter-follow-button" data-show-count="false">Follow @jekyll_octopod</a>
+
+          </div>
+        </div>
+      </div>
+      <div class="row" id="footer">
+        <small class="pull-right">Powered by <a href="https://github.com/pattex/octopod">Octopod</a> and <a href="http://jekyllrb.com/">Jekyll</a>.</small>
+      </div>
+    </div><!-- /.container -->
+  </div><!-- /.container -->
+
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+</html>
