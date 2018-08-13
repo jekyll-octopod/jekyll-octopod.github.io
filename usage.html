@@ -66,26 +66,35 @@
           <div class="content">
             <h1 id="usage">Usage</h1>
 
-<p>Next, update the configuration settings in the configuration file <code class="highlighter-rouge">_config.yml</code> in the application directory. (You are already in it.)</p>
+<p>Next, update the configuration settings in the configuration file <code class="highlighter-rouge">_config.yml</code> in the application
+directory. (You are already in it.)</p>
 
 <ul>
   <li>You might want to change the images and logos in the <code class="highlighter-rouge">img</code> directory</li>
-  <li>You might want to change the demo episode file and the Jekyll Welcome post in <code class="highlighter-rouge">_posts</code> and <code class="highlighter-rouge">_episodes</code></li>
+  <li>You might want to change the demo episode file and the Jekyll Welcome post in <code class="highlighter-rouge">_posts</code> and
+<code class="highlighter-rouge">_episodes</code></li>
 </ul>
 
-<p>You can find a documentation of all the non-Octopod-specific settings on the <a href="http://jekyllrb.com/docs/configuration/">Configuration page of the Jekyll Documentation</a>.</p>
+<p>You can find a documentation of all the non-Octopod-specific settings on the <a href="http://jekyllrb.com/docs/configuration/">Configuration page of
+the Jekyll Documentation</a>.</p>
 
-<p>Jekyll is highly customizable, if you are into coding (or even just want to get into it), read the <a href="https://jekyllrb.com/docs/home/">Jekyll Documentation</a>. It is very detailed and quite easy to grasp.</p>
+<p>Jekyll is highly customizable, if you are into coding (or even just want to get into it), read
+the <a href="https://jekyllrb.com/docs/home/">Jekyll Documentation</a>. It is very detailed and quite easy to grasp.</p>
 
-<p>First of all, your new podcast episode needs audio data. Octopod assumes that your ready to use audio files stay within the <code class="highlighter-rouge">episodes</code> directory in your projects root.</p>
+<p>First of all, your new podcast episode needs audio data. Octopod assumes that your ready to use
+audio files stay within the <code class="highlighter-rouge">episodes</code> directory in your projects root.</p>
 
 <figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nv">$ </span><span class="nb">cp</span> ~/my_superduper_audio_files/ocp001.m4a episodes</code></pre></figure>
 
-<p>In addition, jekyll-octopod assumes that the different audio files of each of your episodes are the same content in various formats — with the same duration and everything.
+<p>In addition, jekyll-octopod assumes that the different audio files of each of your episodes are the
+same content in various formats — with the same duration and everything.
 If they are not, you may confuse your listeners — at least when you are using the chapters feature.</p>
 
-<p>Next up, your episode needs some metadata. A title, some kind of a description, maybe chapters and so on. jekyll-octopod keeps all these metadata in one single text file (Protip: these dear little tots feel very lucky when they might live in a version control system!).
-jekyll-octopod kindly helps you to generate these files with the <code class="highlighter-rouge">octopod episode</code> command. You will get more information on the <a href="./command_line">the command line tool</a> later.</p>
+<p>Next up, your episode needs some metadata. A title, some kind of a description, maybe chapters and
+so on. jekyll-octopod keeps all these metadata in one single text file (Protip: these dear little
+tots feel very lucky when they might live in a version control system!).
+jekyll-octopod kindly helps you to generate these files with the <code class="highlighter-rouge">octopod episode</code> command. You
+will get more information on the <a href="./command_line">the command line tool</a> later.</p>
 
 <p>The following command</p>
 
@@ -120,12 +129,15 @@ jekyll-octopod kindly helps you to generate these files with the <code class="hi
 <span class="err">*</span> <span class="s">Note</span></code></pre></figure>
 
 <p>The part between the “—” and the “—” is the <a href="http://jekyllrb.com/docs/frontmatter/">YAML front matter</a>.
-This is where all the metadata is stored. Below the YAML frontmatter is the area (body) where you can write down your post’s content (like the show notes and stuff).
-This strange looking <code class="highlighter-rouge">{{ podigee_player page }}</code> thingy is the <a href="./liquid-filters">Liquid filter</a>,
-which represents the iframe where the web player will be included later.</p>
+This is where all the metadata is stored. Below the YAML frontmatter is the area (body) where you
+can write down your post’s content (like the show notes and stuff).
+This strange looking <code class="highlighter-rouge">{{ podigee_player page }}</code> thingy is the
+<a href="./liquid-filters">Liquid filter</a>, which represents the iframe where the web player will be included
+later.</p>
 
 <p>When all this work is done you are ready to take a first look.
-The following command generates your site and starts a local webserver for a preview. You can check your new podcasting website by opening <a href="http://localhost:4000">http://localhost:4000</a>.</p>
+The following command generates your site and starts a local webserver for a preview. You can check
+your new podcasting website by opening <a href="http://localhost:4000">http://localhost:4000</a>.</p>
 
 <figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nv">$ </span>octopod <span class="nt">--url</span> <span class="s2">"http://localhost:4000"</span> <span class="nt">--server</span></code></pre></figure>
 
@@ -134,7 +146,8 @@ The following command generates your site and starts a local webserver for a pre
 <figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nv">$ </span>octopod s[erve]</code></pre></figure>
 
 <p>If everything looks good, you can generate the site with the proper url from your configuration.
-<em>Warning</em>: Don’t upload the <code class="highlighter-rouge">_site</code> subdirectory after serving it locally, as all links will assume running on <code class="highlighter-rouge">localhost</code> and this will cause issues!</p>
+<em>Warning</em>: Don’t upload the <code class="highlighter-rouge">_site</code> subdirectory after serving it locally, as all links will assume
+running on <code class="highlighter-rouge">localhost</code> and this will cause issues!</p>
 
 <p>To build your site use</p>
 
@@ -145,7 +158,19 @@ The following command generates your site and starts a local webserver for a pre
 <figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nv">$ </span>octopod deploy</code></pre></figure>
 
 <p><em>Warning</em>: The Rsync settings in your <code class="highlighter-rouge">_config.yml</code> are mandatory for this last step.
-If you don’t wish to use rsync, uploading the website from the <code class="highlighter-rouge">_site</code> subdirectory via FTP or whichever tool you prefer works just fine.</p>
+If you don’t wish to use rsync, uploading the website from the <code class="highlighter-rouge">_site</code> subdirectory via FTP or
+whichever tool you prefer works just fine.</p>
+
+<h2 id="jekyll-admin">Jekyll Admin</h2>
+
+<p>We have also included Jekyll Admin, so you can create new posts and update existing ones using a
+web interface at <a href="http://localhost:4000/admin">http://localhost:4000/admin</a>
+You could even change the config in the web interface.</p>
+
+<p>See the <a href="https://jekyll.github.io/jekyll-admin/">documentation of Jekyll Admin</a> for details.
+Unfortunately Jekyll Admin kills Jekyll’s auto regeneration feature. So if you prefer auto regeneration
+over the web based admin, disable the gem all together by removing it from the <code class="highlighter-rouge">plugin</code> array in
+the <code class="highlighter-rouge">_config.yml</code> file. You can then also remove it from the <code class="highlighter-rouge">Gemfile</code>, if you prefer.</p>
 
 <p><em>Continue with <a href="/command_line">The command line tool</a></em>.</p>
 
