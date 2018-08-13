@@ -72,16 +72,12 @@
 <span class="nv">$ </span>jekyll new name-of-my-podcast
 <span class="nv">$ </span><span class="nb">cd </span>name-of-my-podcast</code></pre></figure>
 
-<p>If it doesn’t exist, create a file <code class="highlighter-rouge">Gemfile</code> with the contents:</p>
+<p>Create a file <code class="highlighter-rouge">Gemfile</code> or modify it, so that it contains:</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">source</span> <span class="s1">'http://rubygems.org'</span>
-<span class="n">gem</span> <span class="s1">'jekyll-octopod'</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">source</span> <span class="s2">"https://rubygems.org"</span>
 
-<p>If it already exists, add the line</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">gem</span> <span class="s1">'jekyll-octopod'</span></code></pre></figure>
-
-<p>at the end of.</p>
+<span class="n">gem</span> <span class="s2">"jekyll"</span><span class="p">,</span> <span class="s2">"~&gt; 3.8.3"</span>
+<span class="n">gem</span> <span class="s2">"jekyll-octopod"</span></code></pre></figure>
 
 <p>This way, we tell Jekyll that we want to use Jekyll-Octopod.
 Now we install the Jekyll-Octopod and its dependencies and run the setup script via:</p>
