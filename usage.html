@@ -167,10 +167,16 @@ whichever tool you prefer works just fine.</p>
 web interface at <a href="http://localhost:4000/admin">http://localhost:4000/admin</a>
 You could even change the config in the web interface.</p>
 
+<p>To enable Jekyll admin uncomment the lines</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># plugins:
+#   - jekyll-admin
+</code></pre></div></div>
+<p>in your project’s <code class="highlighter-rouge">_config.yml</code> file.</p>
+
 <p>See the <a href="https://jekyll.github.io/jekyll-admin/">documentation of Jekyll Admin</a> for details.
 Unfortunately Jekyll Admin kills Jekyll’s auto regeneration feature. So if you prefer auto regeneration
 over the web based admin, disable the gem all together by removing it from the <code class="highlighter-rouge">plugin</code> array in
-the <code class="highlighter-rouge">_config.yml</code> file. You can then also remove it from the <code class="highlighter-rouge">Gemfile</code>, if you prefer.</p>
+the <code class="highlighter-rouge">_config.yml</code> file or commenting it in <code class="highlighter-rouge">_config.yml</code>.</p>
 
 <p><em>Continue with <a href="/command_line">The command line tool</a></em>.</p>
 
