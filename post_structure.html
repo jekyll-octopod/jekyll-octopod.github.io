@@ -78,12 +78,14 @@ Each post has to have a certain structure which consists of the YAML front matte
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">title</span><span class="pi">:</span> <span class="s">Episode 0</span>
 <span class="na">subtitle</span><span class="pi">:</span> <span class="s">Getting Started Is Never Easy</span>
 <span class="na">summary</span><span class="pi">:</span> <span class="s">Otherwise the summary is the first paragraph of the show notes</span>
-<span class="na">episode-cover</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/img/episode-cover0.jpg'</span><span class="nv"> </span><span class="s">#</span><span class="nv"> </span><span class="s">This</span><span class="nv"> </span><span class="s">can</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">used</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">provide</span><span class="nv"> </span><span class="s">episode-specific</span><span class="nv"> </span><span class="s">images</span>
-<span class="s">datum:</span><span class="nv"> </span><span class="s">March</span><span class="nv"> </span><span class="s">22nd</span><span class="nv"> </span><span class="s">2016</span><span class="nv"> </span><span class="s">#</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">longer</span><span class="nv"> </span><span class="s">necessary,</span><span class="nv"> </span><span class="s">but</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">en</span><span class="nv"> </span><span class="s">installations,</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">still</span><span class="nv"> </span><span class="s">respected</span>
-<span class="s">layout:</span><span class="nv"> </span><span class="s">post</span>
-<span class="s">author:</span><span class="nv"> </span><span class="s">Arne</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">Stefan</span>
-<span class="s">explicit:</span><span class="nv"> </span><span class="s">'no'</span>
-<span class="s">duration:</span><span class="nv"> </span><span class="s">"0:03:13"</span>
+
+<span class="c1">### datum: this is no longer necessary, but in de or en installations, it is still respected</span>
+<span class="na">datum</span><span class="pi">:</span> <span class="s">March 22nd 2016</span>
+
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">author</span><span class="pi">:</span> <span class="s">Arne and Stefan</span>
+<span class="na">explicit</span><span class="pi">:</span> <span class="s1">'</span><span class="s">no'</span>
+<span class="na">duration</span><span class="pi">:</span> <span class="s1">'</span><span class="s">0:03:13'</span> <span class="c1"># 'hh:mm:ss'</span>
 <span class="na">audio</span><span class="pi">:</span>
   <span class="na">mp3</span><span class="pi">:</span> <span class="s">episode0.mp3</span>
   <span class="na">ogg</span><span class="pi">:</span> <span class="s">episode0.ogg</span>
@@ -93,9 +95,19 @@ Each post has to have a certain structure which consists of the YAML front matte
   <span class="pi">-</span> <span class="s1">'</span><span class="s">00:00:30.000</span><span class="nv"> </span><span class="s">...</span><span class="nv"> </span><span class="s">Shoubidoubidoo</span><span class="nv"> </span><span class="s">...'</span>
   <span class="pi">-</span> <span class="s1">'</span><span class="s">00:02:45.000</span><span class="nv"> </span><span class="s">Outro.'</span>
 <span class="na">tags</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s2">"</span><span class="s">a</span><span class="nv"> </span><span class="s">tag"</span>
-  <span class="pi">-</span> <span class="s2">"</span><span class="s">another</span><span class="nv"> </span><span class="s">tag"</span>
-<span class="na">posts-dir</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/path/to/post/dir"</span> <span class="c1"># default: '_posts'</span></code></pre></figure>
+  <span class="pi">-</span> <span class="s1">'</span><span class="s">a</span><span class="nv"> </span><span class="s">tag'</span>
+  <span class="pi">-</span> <span class="s1">'</span><span class="s">another</span><span class="nv"> </span><span class="s">tag'</span>
+<span class="na">contributors</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s1">'</span><span class="s">John</span><span class="nv"> </span><span class="s">Doe'</span>
+    <span class="na">uri</span><span class="pi">:</span> <span class="s1">'</span><span class="s">http://doe.com/john'</span>
+    <span class="na">email</span><span class="pi">:</span> <span class="s1">'</span><span class="s">john@doe.com'</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Jane</span><span class="nv"> </span><span class="s">Doe'</span>
+    <span class="na">uri</span><span class="pi">:</span> <span class="s1">'</span><span class="s">http://doe.com/jane'</span>
+    <span class="na">email</span><span class="pi">:</span> <span class="s1">'</span><span class="s">jane@doe.com'</span>
+
+<span class="c1">### image: only filename to be provided here, image should be put in /img directory; optional</span>
+<span class="na">image</span><span class="pi">:</span> <span class="s">episode17.png</span>
+<span class="na">image_title</span><span class="pi">:</span> <span class="s">My Image Title for Episode 17</span></code></pre></figure>
 
 <h2 id="the-body">The body</h2>
 
