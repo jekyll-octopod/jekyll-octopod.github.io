@@ -11,8 +11,8 @@
   <meta name="author" content="Stefan Haslinger">
 
   <link rel="alternate" type="application/atom+xml" href="https://jekyll-octopod.github.io/general_feed.xml" title="General Site Atom Feed (No Podcast Metadata!)" />
-  <link rel="alternate" type="application/rss+xml" title="mp3 Episode RSS-Feed" href="https://jekyll-octopod.github.io/episodes.mp3.rss" />
-<link rel="alternate" type="application/rss+xml" title="ogg Episode RSS-Feed" href="https://jekyll-octopod.github.io/episodes.ogg.rss" />
+  <link rel="alternate" type="application/rss+xml" title="ogg Episode RSS-Feed" href="https://jekyll-octopod.github.io/episodes.ogg.rss" />
+<link rel="alternate" type="application/rss+xml" title="mp3 Episode RSS-Feed" href="https://jekyll-octopod.github.io/episodes.mp3.rss" />
 
   <link rel="stylesheet" type="text/css" href="https://jekyll-octopod.github.io/assets/css/main.css">
   <link rel="stylesheet" type="text/css" href="https://jekyll-octopod.github.io/css/custom_styles.css">
@@ -223,6 +223,15 @@ parameter, it will be skipped.</p>
            <span class="s">type="application/rss+xml" title="Torrent Feed m4a"/&gt;</span>
 <span class="s">&lt;atom:link rel="alternate" href="http://bitlove.org/octopod/octopod_mp3/feed"</span>
            <span class="s">type="application/rss+xml" title="Torrent Feed mp3"/&gt;</span></code></pre></figure>
+
+<h2 id="font-awesome-icons">Font Awesome icons</h2>
+<p>Returns the HTML tags for a font awesome icon</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{</span><span class="err">%</span> <span class="nv">icon fa-camera-retro %</span><span class="pi">}</span> <span class="s">=&gt;</span>
+<span class="s">&lt;i class="fa fa-camera-retro"&gt;&lt;/i&gt;</span>
+
+<span class="pi">{</span><span class="err">%</span> <span class="nv">icon fa-camera-retro fa-lg %</span><span class="pi">}</span> <span class="s">=&gt;</span>
+<span class="s">&lt;i class="fa fa-camera-retro fa-lg"&gt;&lt;/i&gt;</span></code></pre></figure>
 
 <p><em>Continue reading with <a href="/post_structure">The post structure</a>.</em></p>
 
