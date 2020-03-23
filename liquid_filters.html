@@ -72,62 +72,93 @@
 <h2 id="filters">Filters</h2>
 
 <h3 id="cdata-escape">CDATA escape</h3>
+
 <p>Escapes some text for CDATA</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="nv">page.content | cdata_escape</span> <span class="pi">}}</span></code></pre></figure>
 
 <h3 id="json-escape">JSON escape</h3>
+
 <p>Escapes HTML entities in JSON strings.</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="nv">page.some_string | j</span> <span class="pi">}}</span></code></pre></figure>
 
 <h3 id="expand-urls">Expand URLs</h3>
+
 <p>Replaces relative urls with full urls</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="s2">"</span><span class="s">about.html"</span> <span class="err">|</span> <span class="nv">expand_urls</span> <span class="pi">}}</span>             <span class="s">=&gt; "/about.html"</span>
 <span class="pi">{{</span> <span class="s2">"</span><span class="s">about.html"</span> <span class="err">|</span> <span class="nv">expand_urls</span><span class="pi">:</span><span class="nv">site.url</span> <span class="pi">}}</span>    <span class="s">=&gt; "http://example.com/about.html"</span></code></pre></figure>
 
 <h3 id="remove-script-and-audio-tags">Remove Script and Audio tags</h3>
+
 <p>Removes unwanted tags from shownotes</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="nv">page.content | remove_script_and_audio</span> <span class="pi">}}</span></code></pre></figure>
 
 <h3 id="http-only">Http Only</h3>
+
 <p>changes url from requesting https to http</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="nv">url | http_only</span> <span class="pi">}}</span> <span class="s">=&gt; "http://..."</span></code></pre></figure>
 
 <h3 id="time-to-rss-schema">Time to RSS schema</h3>
+
 <p>Formats a Time to be RSS compatible.</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="nv">site.time | time_to_rssschema</span> <span class="pi">}}</span> <span class="s">=&gt; "Wed, 15 Jun 2005 19:00:00 GMT"</span></code></pre></figure>
 
 <h3 id="otherwise">Otherwise</h3>
+
 <p>Returns the first argument if it’s not nil or empty — otherwise it returns the second one.</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="nv">post.author | otherwise</span><span class="pi">:</span><span class="nv">site.author</span> <span class="pi">}}</span></code></pre></figure>
 
 <h3 id="select-audio-file-from-hash">Select audio file from hash</h3>
+
 <p>Returns the value of a given hash. If no key is given as a second parameter, it first tries “mp3”, then “m4a” and then it will return a more or less random value.</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="nv">post.audio | audio</span><span class="pi">:</span><span class="s2">"</span><span class="s">m4a"</span> <span class="pi">}}</span> <span class="s">=&gt; "my-episode.m4a"</span></code></pre></figure>
 
 <h3 id="mime-type">MIME type</h3>
+
 <p>Returns the MIME-Type of a given file format.</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="s2">"</span><span class="s">opus"</span> <span class="err">|</span> <span class="nv">mime_type</span> <span class="pi">}}</span> <span class="s">=&gt; "ogg; codecs=opus"</span></code></pre></figure>
 
 <h3 id="file-size">File size</h3>
+
 <p>Returns the size of a given file in bytes. If there is just a filename without a path, this method assumes that the file is an episode audio file which lives in /episodes.</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="s2">"</span><span class="s">example.m4a"</span> <span class="err">|</span> <span class="nv">file_size</span> <span class="pi">}}</span> <span class="s">=&gt; 4242</span></code></pre></figure>
 
+<h3 id="size-by-format">Size By Format</h3>
+
+<p>Returns the size of a given file in bytes by looking into the front matter
+The sizes in bytes should be in the front matter for remotely hosted files:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">filesize</span><span class="pi">:</span>
+   <span class="na">mp3</span><span class="pi">:</span> <span class="s">123456</span>
+   <span class="na">ogg</span><span class="pi">:</span> <span class="s">234567</span>
+   <span class="na">m4a</span><span class="pi">:</span> <span class="s">345678</span>
+</code></pre></div></div>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="s2">"</span><span class="s">example.m4a"</span> <span class="err">|</span> <span class="nv">size_by_format</span><span class="pi">:</span> <span class="s2">"</span><span class="s">mp3"</span> <span class="pi">}}</span> <span class="s">=&gt; 4242</span></code></pre></figure>
+
+<h3 id="in-megabytes">In Megabytes</h3>
+
+<p>Converts a size in Bytes to Megabytes</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="nv">123456 | in_megabytes</span> <span class="pi">}}</span> <span class="s">=&gt; 0.1 MB</span></code></pre></figure>
+
 <h3 id="slug">Slug</h3>
+
 <p>Returns a slug based on the id of a given page.</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="nv">page | slug</span> <span class="pi">}}</span> <span class="s">=&gt; '2012_10_02_octopod'</span></code></pre></figure>
 
 <h3 id="split-chapter">Split chapter</h3>
+
 <p>Splits a chapter, like it is written to the post YAML front matter, into the
 components ‘start’ — which refers to a single point in time relative to the
 beginning of the media file — and ‘title’ — which defines the text to be
@@ -139,32 +170,38 @@ the title of the chapter.</p>
 <span class="pi">{{</span> <span class="s1">'</span><span class="s">00:00:00.000</span><span class="nv"> </span><span class="s">Welcome</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">Octopod!'</span> <span class="err">|</span> <span class="nv">split_chapter</span><span class="pi">:</span><span class="s1">'</span><span class="s">start'</span> <span class="pi">}}</span>  <span class="s">=&gt; '00:00:00.000'</span></code></pre></figure>
 
 <h3 id="audio-tag">Audio tag</h3>
+
 <p>Returns an <code class="highlighter-rouge">&lt;audio&gt;</code> tag for a given page with <code class="highlighter-rouge">&lt;source&gt;</code> tags in it for every
 audio file in the page’s YAML front matter.</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="nv">page | audio_tag</span><span class="pi">:</span><span class="nv">site</span> <span class="pi">}}</span></code></pre></figure>
 
 <h3 id="web-player">Web player</h3>
+
 <p>Returns the web player for the episode of a given page.</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="nv">page | podigee_player</span><span class="pi">:</span><span class="nv">site</span> <span class="pi">}}</span></code></pre></figure>
 
 <h3 id="string-of-duration">String of duration</h3>
+
 <p>Gets a number of seconds and returns a human readable duration string of it.</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="nv">1252251 | string_of_duration</span> <span class="pi">}}</span> <span class="s">=&gt; "00:03:13"</span></code></pre></figure>
 
 <h3 id="string-of-size">String of size</h3>
+
 <p>Gets a number of bytes and returns a human readable string of it.</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="nv">1252251 | string_of_size</span> <span class="pi">}}</span> <span class="s">=&gt; "1.19M"</span></code></pre></figure>
 
 <h3 id="host-from-url">Host from URL</h3>
+
 <p>Returns the host of a given url</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="s1">'</span><span class="s">https://github.com/pattex/octopod'</span> <span class="err">|</span> <span class="nv">host_from_url</span> <span class="pi">}}</span> <span class="s">=&gt; "github.com"</span></code></pre></figure>
 
 <h3 id="disqus-configuration">Disqus configuration</h3>
+
 <p>Generates the config for disqus integration. If a page object is given, it
 generates the config variables only for this page. Otherwise, it only
 generates the global config variables.</p>
@@ -173,6 +210,7 @@ generates the global config variables.</p>
 <span class="pi">{{</span> <span class="nv">site | disqus_config</span><span class="pi">:</span><span class="nv">page</span> <span class="pi">}}</span></code></pre></figure>
 
 <h3 id="sha1">SHA1</h3>
+
 <p>Returns the hex-encoded hash value of a given string. The optional
 second argument defines the length of the returned string.</p>
 
@@ -180,12 +218,14 @@ second argument defines the length of the returned string.</p>
 <span class="pi">{{</span> <span class="s2">"</span><span class="s">Octopod"</span> <span class="err">|</span> <span class="nv">sha1</span><span class="pi">:</span><span class="nv">23</span> <span class="pi">}}</span> <span class="s">=&gt; "8b20a59c8e2dcb5e1f845ba"</span></code></pre></figure>
 
 <h3 id="navigation-list">Navigation list</h3>
+
 <p>Returns a ready-to-use navigation list of all pages that have <code class="highlighter-rouge">navigation</code> set
 in their YAML front matter. The list is sorted by the value of <code class="highlighter-rouge">navigation</code>.</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="nv">site | navigation_list</span><span class="pi">:</span><span class="nv">page</span> <span class="pi">}}</span></code></pre></figure>
 
 <h3 id="episode-feeds">Episode feeds</h3>
+
 <p>Returns an array of all episode feeds named by the convention
 <code class="highlighter-rouge">episodes.&lt;episode_file_format&gt;.rss</code> within the root directory. Also it
 contains all additional feeds specified by <code class="highlighter-rouge">additional_feeds</code> in the <code class="highlighter-rouge">_config.yml</code>.
@@ -196,6 +236,7 @@ parameter, it will be skipped.</p>
 <span class="pi">{{</span> <span class="nv">site | episode_feeds</span><span class="pi">:</span><span class="nv">mp3</span> <span class="pi">}}</span></code></pre></figure>
 
 <h3 id="episode-feeds-html">Episode feeds HTML</h3>
+
 <p>Returns HTML links to all episode feeds named by the convention
 <code class="highlighter-rouge">episodes.&lt;episode_file_format&gt;.rss</code> within the root directory. Also it returns
 all additional feeds specified by <code class="highlighter-rouge">additional_feeds</code> in the <code class="highlighter-rouge">_config.yml</code>. If
@@ -211,6 +252,7 @@ parameter, it will be skipped.</p>
       <span class="s">href="http://bitlove.org/octopod/octopod_mp3/feed" /&gt;</span></code></pre></figure>
 
 <h3 id="episode-feeds-rss">Episode feeds RSS</h3>
+
 <p>Returns RSS-XML links to all episode feeds named by the convention
 <code class="highlighter-rouge">episodes.&lt;episode_file_format&gt;.rss</code> within the root directory. Also it returns
 all additional feeds specified by <code class="highlighter-rouge">additional_feeds</code> in the <code class="highlighter-rouge">_config.yml</code>. If an
@@ -226,6 +268,7 @@ parameter, it will be skipped.</p>
            <span class="s">type="application/rss+xml" title="Torrent Feed mp3"/&gt;</span></code></pre></figure>
 
 <h2 id="font-awesome-icons">Font Awesome icons</h2>
+
 <p>Returns the HTML tags for a font awesome icon</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{</span><span class="err">%</span> <span class="nv">icon fa-camera-retro %</span><span class="pi">}</span> <span class="s">=&gt;</span>
