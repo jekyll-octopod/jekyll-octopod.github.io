@@ -1,13 +1,37 @@
-<h1 id="media-owner-and-content">Media Owner and Content</h1>
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>jekyll - octopod</title>
+    <link>https://jekyll-octopod.github.io</link>
+    <atom:link href="https://jekyll-octopod.github.io/episodes.ogg.rss" rel="self" type="application/rss+xml" title="ogg Episode RSS-Feed"/>
+    <atom:link rel="alternate" href="https://jekyll-octopod.github.io/episodes.mp3.rss" type="application/rss+xml" title="mp3 Episode RSS-Feed"/>
+    <description>Static Site Podcast Publishing for Geeks.
+</description>
+    <lastBuildDate>Fri, 24 Apr 2020 13:42:02 +0200</lastBuildDate>
+    <language>en</language>
 
-<p>… put in information here …</p>
-
-<h1 id="links">Links</h1>
-
-<p>… put in information here …</p>
-
-<h1 id="license">License</h1>
-
-<p>… use cc by as below or put in information here …
-<a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://i.creativecommons.org/l/by/4.0/88x31.png" alt="Creative Commons License" /></a></p>
-
+    <itunes:summary>Static Site Podcast Publishing for Geeks.
+</itunes:summary>
+    <itunes:author>Stefan Haslinger</itunes:author>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:image href="https://jekyll-octopod.github.io/img/logo-itunes.jpg" />
+    <itunes:owner>
+      <itunes:name>Stefan Haslinger</itunes:name>
+      <itunes:email>stefan.haslinger@informatom.com</itunes:email>
+    </itunes:owner>
+    <managingEditor>stefan.haslinger@informatom.com (Stefan Haslinger)</managingEditor>
+    <copyright>CC BY 4.0</copyright>
+    <itunes:subtitle>Static Site Podcast Publishing for Geeks</itunes:subtitle>
+    <itunes:keywords>octopod, podcast, magic</itunes:keywords>
+    <image>
+      <title>jekyll - octopod</title>
+      <url>https://jekyll-octopod.github.io/img/logo-itunes.jpg</url>
+      <link>https://jekyll-octopod.github.io</link>
+    </image>
+    
+    <itunes:category text="Technology">
+    
+    </itunes:category>
+    
+  </channel>
+</rss>
