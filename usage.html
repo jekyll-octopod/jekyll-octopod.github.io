@@ -11,69 +11,70 @@
   <meta name="author" content="Stefan Haslinger">
 
   <link rel="alternate" type="application/atom+xml" href="https://jekyll-octopod.github.io/general_feed.xml" title="General Site Atom Feed (No Podcast Metadata!)" />
-  <link rel="alternate" type="application/rss+xml" title="ogg Episode RSS-Feed" href="https://jekyll-octopod.github.io/episodes.ogg.rss" />
-<link rel="alternate" type="application/rss+xml" title="mp3 Episode RSS-Feed" href="https://jekyll-octopod.github.io/episodes.mp3.rss" />
+  <link rel="alternate" type="application/rss+xml" title="mp3 Episode RSS-Feed" href="https://jekyll-octopod.github.io/episodes.mp3.rss" />
+<link rel="alternate" type="application/rss+xml" title="ogg Episode RSS-Feed" href="https://jekyll-octopod.github.io/episodes.ogg.rss" />
 
   <link href='/assets/css/ubuntu.css' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="https://jekyll-octopod.github.io/assets/css/main.css">
-  <link rel="stylesheet" type="text/css" href="https://jekyll-octopod.github.io/css/custom_styles.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+  <link rel="stylesheet" type="text/css" href="/css/custom_styles.css">
 
-    <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/jquery.min.js"></script>
-  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/bootstrap.min.js"></script>
-  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/icheck.min.js"></script>
-  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/jquery.fs.selecter.min.js"></script>
-  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/jquery.fs.stepper.min.js"></script>
-  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/custom.js"></script>
+  <script src="/assets/js/dropdown.js"></script>
   <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
-  
+
   
   
 </head>
 
 <body>
-  <div class="container-fluid">
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="https://jekyll-octopod.github.io">jekyll - octopod</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-              <li><a href="https://jekyll-octopod.github.io">Home</a></li>
-              <li><a href="https://twitter.com/jekyll_octopod"><i class="fab fa-twitter"></i> @jekyll_octopod</a>
-              <li><a href="https://github.com/jekyll-octopod/jekyll-octopod/issues"><i class="fab fa-github-alt"></i> Github Issues</a></li>
-              <li><a href="https://github.com/jekyll-octopod/jekyll-octopod"><i class="fab fa-github"></i> Github Repo</a></li>
-          </ul>
-          <form class="navbar-form navbar-right" action="https://google.com/search" method="get" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="search item">
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://jekyll-octopod.github.io">jekyll - octopod</a>
+
+      <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div class="navbar-menu" id="navMenu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="https://jekyll-octopod.github.io">Home</a>
+        <a class="navbar-item" href="https://twitter.com/jekyll_octopod"><i class="lab la-twitter"></i>&nbsp;@jekyll_octopod</a>
+        <a class="navbar-item" href="https://github.com/jekyll-octopod/jekyll-octopod/issues"><i class="lab la-github"></i>&nbsp;Github Issues</a>
+        <a class="navbar-item" href="https://github.com/jekyll-octopod/jekyll-octopod"><i class="lab la-github"></i>&nbsp;Github Repo</a>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <form class="field has-addons" action="https://google.com/search" method="get" role="search">
+            <div class="control">
+              <input type="text" class="input" placeholder="search item">
               <input type="hidden" name="q" value="site:jekyll-octopod.github.io" />
             </div>
-            <button type="submit" class="btn btn-default">Search</button>
+            <div class="control">
+              <button type="submit" class="button">Search</button>
+            </div>
           </form>
-        </div><!--/.nav-collapse -->
+        </div>
       </div>
-    </nav>
+    </div>
+  </nav>
 
+  <section class="section">
     <div class="container">
-      <div class="row ">
-        <div class="col-sm-8">
+      <div class="columns">
+        <div class="column is-8">
           <div class="content">
             <h1 id="usage">Usage</h1>
 
-<p>Next, update the configuration settings in the configuration file <code class="highlighter-rouge">_config.yml</code> in the application
+<p>Next, update the configuration settings in the configuration file <code class="language-plaintext highlighter-rouge">_config.yml</code> in the application
 directory. (You are already in it.)</p>
 
 <ul>
-  <li>You might want to change the images and logos in the <code class="highlighter-rouge">img</code> directory</li>
-  <li>You might want to change the demo episode file and the Jekyll Welcome post in <code class="highlighter-rouge">_posts</code> and
-<code class="highlighter-rouge">_episodes</code></li>
+  <li>You might want to change the images and logos in the <code class="language-plaintext highlighter-rouge">img</code> directory</li>
+  <li>You might want to change the demo episode file and the Jekyll Welcome post in <code class="language-plaintext highlighter-rouge">_posts</code> and
+<code class="language-plaintext highlighter-rouge">_episodes</code></li>
 </ul>
 
 <p>You can find a documentation of all the non-Octopod-specific settings on the <a href="http://jekyllrb.com/docs/configuration/">Configuration page of
@@ -83,7 +84,7 @@ the Jekyll Documentation</a>.</p>
 the <a href="https://jekyllrb.com/docs/home/">Jekyll Documentation</a>. It is very detailed and quite easy to grasp.</p>
 
 <p>First of all, your new podcast episode needs audio data. Octopod assumes that your ready to use
-audio files stay within the <code class="highlighter-rouge">episodes</code> directory in your projects root.</p>
+audio files stay within the <code class="language-plaintext highlighter-rouge">episodes</code> directory in your projects root.</p>
 
 <figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nv">$ </span><span class="nb">cp</span> ~/my_superduper_audio_files/ocp001.m4a episodes</code></pre></figure>
 
@@ -94,14 +95,14 @@ If they are not, you may confuse your listeners — at least when you are using 
 <p>Next up, your episode needs some metadata. A title, some kind of a description, maybe chapters and
 so on. jekyll-octopod keeps all these metadata in one single text file (Protip: these dear little
 tots feel very lucky when they might live in a version control system!).
-jekyll-octopod kindly helps you to generate these files with the <code class="highlighter-rouge">octopod episode</code> command. You
+jekyll-octopod kindly helps you to generate these files with the <code class="language-plaintext highlighter-rouge">octopod episode</code> command. You
 will get more information on the <a href="./command_line">the command line tool</a> later.</p>
 
 <p>The following command</p>
 
 <figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nv">$ </span>octopod episode <span class="nt">--title</span> <span class="s2">"Why I &lt;3 Octopod"</span></code></pre></figure>
 
-<p>will generate you a template called <strong>YYYY-MM-DD-why-i-_3-octopod.md</strong> (YYYY-MM-DD represents the current date) in your <code class="highlighter-rouge">_posts</code> subdirectory. When you open it in your text editor you’ll see something like this:</p>
+<p>will generate you a template called <strong>YYYY-MM-DD-why-i-_3-octopod.md</strong> (YYYY-MM-DD represents the current date) in your <code class="language-plaintext highlighter-rouge">_posts</code> subdirectory. When you open it in your text editor you’ll see something like this:</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="nn">---</span>
 <span class="na">title</span><span class="pi">:</span> <span class="s">Why I &lt;3 Octopod</span>
@@ -132,7 +133,7 @@ will get more information on the <a href="./command_line">the command line tool<
 <p>The part between the “—” and the “—” is the <a href="http://jekyllrb.com/docs/frontmatter/">YAML front matter</a>.
 This is where all the metadata is stored. Below the YAML frontmatter is the area (body) where you
 can write down your post’s content (like the show notes and stuff).
-This strange looking <code class="highlighter-rouge">{{ podigee_player page }}</code> thingy is the
+This strange looking <code class="language-plaintext highlighter-rouge">{{ podigee_player page }}</code> thingy is the
 <a href="./liquid-filters">Liquid filter</a>, which represents the iframe where the web player will be included
 later.</p>
 
@@ -142,13 +143,13 @@ your new podcasting website by opening <a href="http://localhost:4000">http://lo
 
 <figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nv">$ </span>octopod <span class="nt">--url</span> <span class="s2">"http://localhost:4000"</span> <span class="nt">--server</span></code></pre></figure>
 
-<p>Since <code class="highlighter-rouge">localhost:4000</code> is the default, a shorter command with the same result is:</p>
+<p>Since <code class="language-plaintext highlighter-rouge">localhost:4000</code> is the default, a shorter command with the same result is:</p>
 
 <figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nv">$ </span>octopod s[erve]</code></pre></figure>
 
 <p>If everything looks good, you can generate the site with the proper url from your configuration.
-<em>Warning</em>: Don’t upload the <code class="highlighter-rouge">_site</code> subdirectory after serving it locally, as all links will assume
-running on <code class="highlighter-rouge">localhost</code> and this will cause issues!</p>
+<em>Warning</em>: Don’t upload the <code class="language-plaintext highlighter-rouge">_site</code> subdirectory after serving it locally, as all links will assume
+running on <code class="language-plaintext highlighter-rouge">localhost</code> and this will cause issues!</p>
 
 <p>To build your site use</p>
 
@@ -158,8 +159,8 @@ running on <code class="highlighter-rouge">localhost</code> and this will cause 
 
 <figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nv">$ </span>octopod deploy</code></pre></figure>
 
-<p><em>Warning</em>: The Rsync settings in your <code class="highlighter-rouge">_config.yml</code> are mandatory for this last step.
-If you don’t wish to use rsync, uploading the website from the <code class="highlighter-rouge">_site</code> subdirectory via FTP or
+<p><em>Warning</em>: The Rsync settings in your <code class="language-plaintext highlighter-rouge">_config.yml</code> are mandatory for this last step.
+If you don’t wish to use rsync, uploading the website from the <code class="language-plaintext highlighter-rouge">_site</code> subdirectory via FTP or
 whichever tool you prefer works just fine.</p>
 
 <h2 id="jekyll-admin">Jekyll Admin</h2>
@@ -169,30 +170,30 @@ web interface at <a href="http://localhost:4000/admin">http://localhost:4000/adm
 You could even change the config in the web interface.</p>
 
 <p>To enable Jekyll admin uncomment the lines</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># plugins:
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># plugins:
 #   - jekyll-admin
 </code></pre></div></div>
-<p>in your project’s <code class="highlighter-rouge">_config.yml</code> file.</p>
+<p>in your project’s <code class="language-plaintext highlighter-rouge">_config.yml</code> file.</p>
 
 <p>See the <a href="https://jekyll.github.io/jekyll-admin/">documentation of Jekyll Admin</a> for details.
 Unfortunately Jekyll Admin kills Jekyll’s auto regeneration feature. So if you prefer auto regeneration
-over the web based admin, disable the gem all together by removing it from the <code class="highlighter-rouge">plugin</code> array in
-the <code class="highlighter-rouge">_config.yml</code> file or commenting it in <code class="highlighter-rouge">_config.yml</code>.</p>
+over the web based admin, disable the gem all together by removing it from the <code class="language-plaintext highlighter-rouge">plugin</code> array in
+the <code class="language-plaintext highlighter-rouge">_config.yml</code> file or commenting it in <code class="language-plaintext highlighter-rouge">_config.yml</code>.</p>
 
 <p><em>Continue with <a href="/command_line">The command line tool</a></em>.</p>
 
           </div>
         </div>
-        <div id="sidebar" class="col-sm-4">
-          <div class="well">
-            <div class="page-header">
-  <h3>
+        <div id="sidebar" class="column is-4">
+          <div class="box content">
+            <div class="block">
+  <h3 class="title is-3">
     jekyll - octopod
-    <br/><small>Static Site Podcast Publishing for Geeks</small>
   </h3>
+  <h4 class="subtitle is-4">Static Site Podcast Publishing for Geeks</h4>
 </div>
 
-<p class="text-center">
+<p class="has-text-centered">
   <img width="200px" src="https://jekyll-octopod.github.io/img/logo-360x360.png" alt="jekyll - octopod logo">
 </p>
 
@@ -200,7 +201,7 @@ the <code class="highlighter-rouge">_config.yml</code> file or commenting it in 
 
 <hr/>
 
-<h3> Documentation - Topics</h3>
+<h4 class="title is-4">Documentation - Topics</h4>
 
 <ol>
 <li><a  href="https://jekyll-octopod.github.io/prerequisites">Prerequisites</a></li>
@@ -218,18 +219,17 @@ the <code class="highlighter-rouge">_config.yml</code> file or commenting it in 
 <li><a  href="https://jekyll-octopod.github.io/conduct">Code of Conduct</a></li>
 </ol>
 
-
-<h3> Source Code </h3>
+<h4 class="title is-4">Source Code</h4>
 
 <ul>
   <li>
     <a href="https://github.com/jekyll-octopod/jekyll-octopod">
-      <i class="fab fa-github"></i> Github
+      <i class="lab la-github"></i> Github
     </a>
   </li>
 </ul>
 
-<h3>Social Media</h3>
+<h4 class="title is-4">Social Media</h4>
 
 For us on Twitter for News!
 <br/>
@@ -238,13 +238,14 @@ For us on Twitter for News!
           </div>
         </div>
       </div>
-      <div class="row" id="footer">
-        <small class="pull-right">Powered by <a href="https://github.com/pattex/octopod">Octopod</a> and <a href="http://jekyllrb.com/">Jekyll</a>.</small>
+      <div id="footer" class="has-text-right">
+        <small>Powered by <a href="https://github.com/pattex/octopod">Octopod</a> and <a href="http://jekyllrb.com/">Jekyll</a>.</small>
       </div>
-    </div><!-- /.container -->
-  </div><!-- /.container -->
+    </div>
+  </section>
 
 <script>
 !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 </script>
+</body>
 </html>

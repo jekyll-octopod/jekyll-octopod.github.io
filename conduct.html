@@ -11,59 +11,60 @@
   <meta name="author" content="Stefan Haslinger">
 
   <link rel="alternate" type="application/atom+xml" href="https://jekyll-octopod.github.io/general_feed.xml" title="General Site Atom Feed (No Podcast Metadata!)" />
-  <link rel="alternate" type="application/rss+xml" title="ogg Episode RSS-Feed" href="https://jekyll-octopod.github.io/episodes.ogg.rss" />
-<link rel="alternate" type="application/rss+xml" title="mp3 Episode RSS-Feed" href="https://jekyll-octopod.github.io/episodes.mp3.rss" />
+  <link rel="alternate" type="application/rss+xml" title="mp3 Episode RSS-Feed" href="https://jekyll-octopod.github.io/episodes.mp3.rss" />
+<link rel="alternate" type="application/rss+xml" title="ogg Episode RSS-Feed" href="https://jekyll-octopod.github.io/episodes.ogg.rss" />
 
   <link href='/assets/css/ubuntu.css' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="https://jekyll-octopod.github.io/assets/css/main.css">
-  <link rel="stylesheet" type="text/css" href="https://jekyll-octopod.github.io/css/custom_styles.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+  <link rel="stylesheet" type="text/css" href="/css/custom_styles.css">
 
-    <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/jquery.min.js"></script>
-  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/bootstrap.min.js"></script>
-  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/icheck.min.js"></script>
-  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/jquery.fs.selecter.min.js"></script>
-  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/jquery.fs.stepper.min.js"></script>
-  <script type='text/javascript' src="https://jekyll-octopod.github.io/assets/js/custom.js"></script>
+  <script src="/assets/js/dropdown.js"></script>
   <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
-  
+
   
   
 </head>
 
 <body>
-  <div class="container-fluid">
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="https://jekyll-octopod.github.io">jekyll - octopod</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-              <li><a href="https://jekyll-octopod.github.io">Home</a></li>
-              <li><a href="https://twitter.com/jekyll_octopod"><i class="fab fa-twitter"></i> @jekyll_octopod</a>
-              <li><a href="https://github.com/jekyll-octopod/jekyll-octopod/issues"><i class="fab fa-github-alt"></i> Github Issues</a></li>
-              <li><a href="https://github.com/jekyll-octopod/jekyll-octopod"><i class="fab fa-github"></i> Github Repo</a></li>
-          </ul>
-          <form class="navbar-form navbar-right" action="https://google.com/search" method="get" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="search item">
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://jekyll-octopod.github.io">jekyll - octopod</a>
+
+      <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div class="navbar-menu" id="navMenu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="https://jekyll-octopod.github.io">Home</a>
+        <a class="navbar-item" href="https://twitter.com/jekyll_octopod"><i class="lab la-twitter"></i>&nbsp;@jekyll_octopod</a>
+        <a class="navbar-item" href="https://github.com/jekyll-octopod/jekyll-octopod/issues"><i class="lab la-github"></i>&nbsp;Github Issues</a>
+        <a class="navbar-item" href="https://github.com/jekyll-octopod/jekyll-octopod"><i class="lab la-github"></i>&nbsp;Github Repo</a>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <form class="field has-addons" action="https://google.com/search" method="get" role="search">
+            <div class="control">
+              <input type="text" class="input" placeholder="search item">
               <input type="hidden" name="q" value="site:jekyll-octopod.github.io" />
             </div>
-            <button type="submit" class="btn btn-default">Search</button>
+            <div class="control">
+              <button type="submit" class="button">Search</button>
+            </div>
           </form>
-        </div><!--/.nav-collapse -->
+        </div>
       </div>
-    </nav>
+    </div>
+  </nav>
 
+  <section class="section">
     <div class="container">
-      <div class="row ">
-        <div class="col-sm-8">
+      <div class="columns">
+        <div class="column is-8">
           <div class="content">
             <h1 id="contributor-covenant-code-of-conduct">Contributor Covenant Code of Conduct</h1>
 
@@ -145,16 +146,16 @@ available at <a href="http://contributor-covenant.org/version/1/4/">http://contr
 
           </div>
         </div>
-        <div id="sidebar" class="col-sm-4">
-          <div class="well">
-            <div class="page-header">
-  <h3>
+        <div id="sidebar" class="column is-4">
+          <div class="box content">
+            <div class="block">
+  <h3 class="title is-3">
     jekyll - octopod
-    <br/><small>Static Site Podcast Publishing for Geeks</small>
   </h3>
+  <h4 class="subtitle is-4">Static Site Podcast Publishing for Geeks</h4>
 </div>
 
-<p class="text-center">
+<p class="has-text-centered">
   <img width="200px" src="https://jekyll-octopod.github.io/img/logo-360x360.png" alt="jekyll - octopod logo">
 </p>
 
@@ -162,7 +163,7 @@ available at <a href="http://contributor-covenant.org/version/1/4/">http://contr
 
 <hr/>
 
-<h3> Documentation - Topics</h3>
+<h4 class="title is-4">Documentation - Topics</h4>
 
 <ol>
 <li><a  href="https://jekyll-octopod.github.io/prerequisites">Prerequisites</a></li>
@@ -180,18 +181,17 @@ available at <a href="http://contributor-covenant.org/version/1/4/">http://contr
 <li class="active"><a  class="active" href="https://jekyll-octopod.github.io/conduct">Code of Conduct</a></li>
 </ol>
 
-
-<h3> Source Code </h3>
+<h4 class="title is-4">Source Code</h4>
 
 <ul>
   <li>
     <a href="https://github.com/jekyll-octopod/jekyll-octopod">
-      <i class="fab fa-github"></i> Github
+      <i class="lab la-github"></i> Github
     </a>
   </li>
 </ul>
 
-<h3>Social Media</h3>
+<h4 class="title is-4">Social Media</h4>
 
 For us on Twitter for News!
 <br/>
@@ -200,13 +200,14 @@ For us on Twitter for News!
           </div>
         </div>
       </div>
-      <div class="row" id="footer">
-        <small class="pull-right">Powered by <a href="https://github.com/pattex/octopod">Octopod</a> and <a href="http://jekyllrb.com/">Jekyll</a>.</small>
+      <div id="footer" class="has-text-right">
+        <small>Powered by <a href="https://github.com/pattex/octopod">Octopod</a> and <a href="http://jekyllrb.com/">Jekyll</a>.</small>
       </div>
-    </div><!-- /.container -->
-  </div><!-- /.container -->
+    </div>
+  </section>
 
 <script>
 !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 </script>
+</body>
 </html>
