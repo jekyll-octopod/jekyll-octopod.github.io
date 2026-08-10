@@ -178,9 +178,11 @@ audio file in the page’s YAML front matter.</p>
 
 <h3 id="web-player">Web player</h3>
 
-<p>Returns the web player for the episode of a given page.</p>
+<p>Renders the <a href="https://podlove.org/podlove-web-player/">Podlove Web Player</a> for the current page’s
+episode, if it has an <code class="language-plaintext highlighter-rouge">audio</code> front matter key. This is a tag, not a filter — it reads the current
+page directly, no arguments needed.</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="nv">page | podigee_player</span><span class="pi">:</span><span class="nv">site</span> <span class="pi">}}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{</span><span class="err">%</span> <span class="nv">podlove_player %</span><span class="pi">}</span></code></pre></figure>
 
 <h3 id="string-of-duration">String of duration</h3>
 

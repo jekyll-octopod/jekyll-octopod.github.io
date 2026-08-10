@@ -123,7 +123,7 @@ will get more information on the <a href="./command_line">the command line tool<
 <span class="nn">---</span>
 <span class="c1">## </span>
 
-<span class="pi">{{</span> <span class="nv">podigee_player page</span> <span class="pi">}}</span>
+<span class="pi">{</span><span class="err">%</span> <span class="nv">podlove_player %</span><span class="pi">}</span>
 
 <span class="c1">## Shownotes and Links</span>
 
@@ -132,8 +132,8 @@ will get more information on the <a href="./command_line">the command line tool<
 <p>The part between the “—” and the “—” is the <a href="http://jekyllrb.com/docs/frontmatter/">YAML front matter</a>.
 This is where all the metadata is stored. Below the YAML frontmatter is the area (body) where you
 can write down your post’s content (like the show notes and stuff).
-This strange looking <code class="language-plaintext highlighter-rouge">{{ podigee_player page }}</code> thingy is the
-<a href="./liquid-filters">Liquid filter</a>, which represents the iframe where the web player will be included
+This strange looking <code class="language-plaintext highlighter-rouge">{% podlove_player %}</code> thingy is the
+<a href="./liquid-filters">Liquid tag</a>, which represents the iframe where the web player will be included
 later.</p>
 
 <p>When all this work is done you are ready to take a first look.
