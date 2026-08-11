@@ -27653,8 +27653,19 @@ has-background-danger.is-hoverable:active {
   --bulma-navbar-h: 166deg;
   --bulma-navbar-s: 48%;
   --bulma-navbar-l: 55%;
+  --bulma-navbar-item-selected-h: var(--bulma-navbar-h);
+  --bulma-navbar-item-selected-s: var(--bulma-navbar-s);
+  --bulma-navbar-item-selected-l: var(--bulma-navbar-l);
+  --bulma-navbar-item-selected-background-l: 40%;
+  --bulma-navbar-item-selected-color-l: 97%;
 }
 
+@media (prefers-color-scheme: dark) {
+  .navbar {
+    --bulma-navbar-background-color: #1B4B40;
+    --bulma-navbar-l: 20%;
+  }
+}
 h1 small, h2 small, h3 small {
   color: #77778C;
 }

@@ -88,13 +88,39 @@ cascade at equal selector specificity.</p>
 <p>To change the navbar’s background color, override the custom properties it reads its colors from
 — <code class="language-plaintext highlighter-rouge">--bulma-navbar-background-color</code> for the flat background, plus <code class="language-plaintext highlighter-rouge">--bulma-navbar-h</code>/<code class="language-plaintext highlighter-rouge">-s</code>/<code class="language-plaintext highlighter-rouge">-l</code> so
 that hover, active and dropdown states (which Bulma derives from that hue/saturation/lightness
-triple, not from the flat color alone) stay consistent with it:</p>
+triple, not from the flat color alone) stay consistent with it. Two more things need covering
+alongside it, or the result looks like it’s only half-themed:</p>
+
+<ul>
+  <li>the <em>currently active</em> nav item (<code class="language-plaintext highlighter-rouge">a.navbar-item.is-active</code>) doesn’t inherit <code class="language-plaintext highlighter-rouge">--bulma-navbar-h</code>/
+<code class="language-plaintext highlighter-rouge">-s</code>/<code class="language-plaintext highlighter-rouge">-l</code> at all — it reads a separate <code class="language-plaintext highlighter-rouge">--bulma-navbar-item-selected-*</code> set of properties that
+default to Bulma’s own global link color, unrelated to whatever the navbar itself uses.</li>
+  <li>the background above is a flat, literal color, so it won’t react to the visitor’s OS/browser dark
+mode preference the way the rest of the (CSS-custom-property-driven) theme does. Left alone, dark
+mode still swaps the <em>text</em> color of the resting nav items to something light (Bulma’s own
+<code class="language-plaintext highlighter-rouge">--bulma-text-l</code>, meant for contrast against a dark page) while the navbar’s background stays
+exactly as light as it was — light text on a still-light bar. A <code class="language-plaintext highlighter-rouge">prefers-color-scheme: dark</code>
+override with a darker version of the same hue keeps it legible in both.</li>
+</ul>
 
 <div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.navbar</span> <span class="p">{</span>
   <span class="na">--bulma-navbar-background-color</span><span class="p">:</span> <span class="nf">rgb</span><span class="p">(</span><span class="m">72</span><span class="o">,</span> <span class="m">207</span><span class="o">,</span> <span class="m">173</span><span class="p">);</span>
   <span class="na">--bulma-navbar-h</span><span class="p">:</span> <span class="m">166deg</span><span class="p">;</span>
   <span class="na">--bulma-navbar-s</span><span class="p">:</span> <span class="m">48%</span><span class="p">;</span>
   <span class="na">--bulma-navbar-l</span><span class="p">:</span> <span class="m">55%</span><span class="p">;</span>
+
+  <span class="na">--bulma-navbar-item-selected-h</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">bulma-navbar-h</span><span class="p">);</span>
+  <span class="na">--bulma-navbar-item-selected-s</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">bulma-navbar-s</span><span class="p">);</span>
+  <span class="na">--bulma-navbar-item-selected-l</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">bulma-navbar-l</span><span class="p">);</span>
+  <span class="na">--bulma-navbar-item-selected-background-l</span><span class="p">:</span> <span class="m">40%</span><span class="p">;</span>
+  <span class="na">--bulma-navbar-item-selected-color-l</span><span class="p">:</span> <span class="m">97%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="p">(</span><span class="n">prefers-color-scheme</span><span class="o">:</span> <span class="n">dark</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">.navbar</span> <span class="p">{</span>
+    <span class="na">--bulma-navbar-background-color</span><span class="p">:</span> <span class="mh">#1B4B40</span><span class="p">;</span>
+    <span class="na">--bulma-navbar-l</span><span class="p">:</span> <span class="m">20%</span><span class="p">;</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
