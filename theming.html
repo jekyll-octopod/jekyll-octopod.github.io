@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>jekyll - octopod - Theming</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,11 +16,9 @@
 
   <link href='/assets/css/ubuntu.css' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
-  <link rel="stylesheet" type="text/css" href="/css/custom_styles.css">
 
   <script src="/assets/js/dropdown.js"></script>
 
-  
   
 </head>
 
@@ -38,6 +36,10 @@
 
     <div class="navbar-menu" id="navMenu">
       <div class="navbar-start">
+        <!-- This site overrides the theme's default.html just for this nav: it lists the
+             jekyll-octopod project's own GitHub links directly instead of the theme's normal
+             page-navigation ({{ site | navigation_list:page }}), since those
+             are the links a visitor to the project's own docs site wants, not per-page navigation. -->
         <a class="navbar-item" href="https://jekyll-octopod.github.io">Home</a>
         <a class="navbar-item" href="https://fosstodon.org/@informatom" rel="me"><i class="lab la-mastodon"></i>&nbsp;@informatom@fosstodon.org</a>
         <a class="navbar-item" href="https://github.com/jekyll-octopod/jekyll-octopod/issues"><i class="lab la-github"></i>&nbsp;Github Issues</a>
@@ -48,7 +50,7 @@
         <div class="navbar-item">
           <form class="field has-addons" action="https://google.com/search" method="get" role="search">
             <div class="control">
-              <input type="text" class="input" placeholder="search item">
+              <input type="text" class="input" name="q" placeholder="search item" value="">
               <input type="hidden" name="q" value="site:jekyll-octopod.github.io" />
             </div>
             <div class="control">
@@ -67,11 +69,17 @@
           <div class="content">
             <h1 id="theming">Theming</h1>
 
-<p>The theme currently in use is <a href="https://github.com/jekyll-octopod/jekyll-bulma">jekyll-bulma</a>, a
-Gem based theme (a Jekyll feature described in the Jekyll documentation of
+<p>The theme currently in use is
+<a href="https://github.com/jekyll-octopod/jekyll-octopod-bulma">jekyll-octopod-bulma</a>, a Gem based theme
+(a Jekyll feature described in the Jekyll documentation of
 <a href="https://jekyllrb.com/docs/themes/">Gem based themes</a>) implementing <a href="https://bulma.io/">Bulma</a>, a
 modern, small CSS framework with no JavaScript bloat. Bulma is well documented:
 <a href="https://bulma.io/documentation/">Bulma documentation</a>.</p>
+
+<p>jekyll-octopod-bulma is a fork of the standalone <a href="https://github.com/jekyll-octopod/jekyll-bulma">jekyll-bulma</a>
+theme, with octopod’s own sidebar layout, post/feed layouts, and vendored assets (the Podlove
+player, the subscribe button, the default logo/favicons) folded in — so it, not jekyll-bulma
+directly, is what ships in your site’s <code class="language-plaintext highlighter-rouge">theme:</code> setting and what everything below applies to.</p>
 
 <p>Bulma 1.x styles its components with CSS custom properties (<code class="language-plaintext highlighter-rouge">--bulma-*</code>) instead of baking fixed
 colors straight into the compiled CSS, which makes theming considerably simpler than with the old
@@ -138,8 +146,8 @@ your own selector.</p>
   <li>You still need your browser’s developer tools to find the exact <code class="language-plaintext highlighter-rouge">--bulma-*</code> custom property name
 for the component you want to change — check the compiled <code class="language-plaintext highlighter-rouge">--bulma-*</code> declarations on the
 element, or the component’s own partial in the vendored
-<a href="https://github.com/jekyll-octopod/jekyll-bulma/tree/master/_sass/sass"><code class="language-plaintext highlighter-rouge">_sass/sass/</code> directory</a>
-of jekyll-bulma.</li>
+<a href="https://github.com/jekyll-octopod/jekyll-octopod-bulma/tree/master/_sass/sass"><code class="language-plaintext highlighter-rouge">_sass/sass/</code> directory</a>
+of jekyll-octopod-bulma.</li>
   <li>Some visual states (hover, active, dropdown shading, …) are derived from companion <code class="language-plaintext highlighter-rouge">-h</code>/<code class="language-plaintext highlighter-rouge">-s</code>/<code class="language-plaintext highlighter-rouge">-l</code>
 variables rather than the flat color property alone — overriding just the background color without
 the matching hue/saturation/lightness can leave those derived states looking inconsistent.</li>
@@ -147,7 +155,7 @@ the matching hue/saturation/lightness can leave those derived states looking inc
 
 <h2 id="overriding-sass-variables">Overriding Sass variables</h2>
 
-<p>jekyll-bulma’s entry point (<a href="https://github.com/jekyll-octopod/jekyll-bulma/blob/master/_sass/bulma.scss"><code class="language-plaintext highlighter-rouge">_sass/bulma.scss</code></a>)
+<p>jekyll-octopod-bulma’s entry point (<a href="https://github.com/jekyll-octopod/jekyll-octopod-bulma/blob/master/_sass/bulma.scss"><code class="language-plaintext highlighter-rouge">_sass/bulma.scss</code></a>)
 loads its components with <code class="language-plaintext highlighter-rouge">@use</code>, not <code class="language-plaintext highlighter-rouge">@forward</code>, so the component-level Sass variables defined
 deep inside (e.g. <code class="language-plaintext highlighter-rouge">$navbar-background-color</code> in <code class="language-plaintext highlighter-rouge">_sass/sass/components/navbar.scss</code>) are not
 exposed for configuration via <code class="language-plaintext highlighter-rouge">@use "bulma" with (...)</code> from your own <code class="language-plaintext highlighter-rouge">main.scss</code>. In practice,
@@ -167,7 +175,7 @@ there currently isn’t a working Sass-variable-override path the way there was 
 </div>
 
 <p class="has-text-centered">
-  <img width="200px" src="https://jekyll-octopod.github.io/img/logo-360x360.png" alt="jekyll - octopod logo">
+  <img width="200px" src="https://jekyll-octopod.github.io/assets/img/logo-360x360.png" alt="jekyll - octopod logo">
 </p>
 
 <p>Static Site Podcast Publishing for Geeks.</p>
@@ -216,7 +224,10 @@ Follow us on the fediverse for News!
         </div>
       </div>
       <div id="footer" class="has-text-right">
-        <small>Powered by <a href="https://github.com/pattex/octopod">Octopod</a> and <a href="http://jekyllrb.com/">Jekyll</a>.</small>
+        <small>
+          Powered by <a href="https://jekyll-octopod.github.io/">jekyll-octopod</a>
+          and <a href="http://jekyllrb.com/">Jekyll</a>.
+        </small>
       </div>
     </div>
   </section>

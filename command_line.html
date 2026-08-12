@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>jekyll - octopod - Command Line Tool</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,11 +16,9 @@
 
   <link href='/assets/css/ubuntu.css' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
-  <link rel="stylesheet" type="text/css" href="/css/custom_styles.css">
 
   <script src="/assets/js/dropdown.js"></script>
 
-  
   
 </head>
 
@@ -38,6 +36,10 @@
 
     <div class="navbar-menu" id="navMenu">
       <div class="navbar-start">
+        <!-- This site overrides the theme's default.html just for this nav: it lists the
+             jekyll-octopod project's own GitHub links directly instead of the theme's normal
+             page-navigation ({{ site | navigation_list:page }}), since those
+             are the links a visitor to the project's own docs site wants, not per-page navigation. -->
         <a class="navbar-item" href="https://jekyll-octopod.github.io">Home</a>
         <a class="navbar-item" href="https://fosstodon.org/@informatom" rel="me"><i class="lab la-mastodon"></i>&nbsp;@informatom@fosstodon.org</a>
         <a class="navbar-item" href="https://github.com/jekyll-octopod/jekyll-octopod/issues"><i class="lab la-github"></i>&nbsp;Github Issues</a>
@@ -48,7 +50,7 @@
         <div class="navbar-item">
           <form class="field has-addons" action="https://google.com/search" method="get" role="search">
             <div class="control">
-              <input type="text" class="input" placeholder="search item">
+              <input type="text" class="input" name="q" placeholder="search item" value="">
               <input type="hidden" name="q" value="site:jekyll-octopod.github.io" />
             </div>
             <div class="control">
@@ -85,6 +87,17 @@
 <span class="c"># Sets up Jekyll site to become podcast-aware, copies assets and default config.</span>
 <span class="c"># Asks for confirmation on file overwrite.</span>
 
+<span class="nv">$ </span>octopod update
+<span class="c"># Updates an existing site's template files to the currently installed</span>
+<span class="c"># jekyll-octopod version. Unlike `setup`, it never touches _posts/, imprint.md,</span>
+<span class="c"># index.md or the demo episodes/ files - those are always left alone, since this</span>
+<span class="c"># targets sites that are already live with real content. Also removes any</span>
+<span class="c"># leftover local copy of a file that's now served by the jekyll-octopod-bulma</span>
+<span class="c"># theme gem instead (layouts, includes, the Podlove player, the subscribe</span>
+<span class="c"># button, ...), keeping any '.md' file found along the way, and rewrites the</span>
+<span class="c"># retired {% podigee_player %} tag to {% podlove_player %} in any post that</span>
+<span class="c"># still uses it.</span>
+
 <span class="nv">$ </span>octopod episode
 <span class="c"># adds a post for a new episode</span>
 
@@ -99,7 +112,9 @@
 
 <p>Configuration is read from ‘<source />/_config.yml’ but can be overridden.
 Available options are documented in <code class="language-plaintext highlighter-rouge">_config.yml</code>.
-In case, you deleted some of the options, a full reference can be found in <code class="language-plaintext highlighter-rouge">_config.yml.sample</code>.</p>
+In case you deleted some of the options, a full reference can be found in
+<a href="https://github.com/jekyll-octopod/jekyll-octopod/blob/master/assets/_config.yml.sample"><code class="language-plaintext highlighter-rouge">assets/_config.yml.sample</code></a>
+in the jekyll-octopod gem itself.</p>
 
 <p>For <code class="language-plaintext highlighter-rouge">octopod episode</code>, the following options are available to override defaults:</p>
 
@@ -148,7 +163,7 @@ out the full stack trace, which can be helpful in debugging and improves bug rep
 </div>
 
 <p class="has-text-centered">
-  <img width="200px" src="https://jekyll-octopod.github.io/img/logo-360x360.png" alt="jekyll - octopod logo">
+  <img width="200px" src="https://jekyll-octopod.github.io/assets/img/logo-360x360.png" alt="jekyll - octopod logo">
 </p>
 
 <p>Static Site Podcast Publishing for Geeks.</p>
@@ -197,7 +212,10 @@ Follow us on the fediverse for News!
         </div>
       </div>
       <div id="footer" class="has-text-right">
-        <small>Powered by <a href="https://github.com/pattex/octopod">Octopod</a> and <a href="http://jekyllrb.com/">Jekyll</a>.</small>
+        <small>
+          Powered by <a href="https://jekyll-octopod.github.io/">jekyll-octopod</a>
+          and <a href="http://jekyllrb.com/">Jekyll</a>.
+        </small>
       </div>
     </div>
   </section>

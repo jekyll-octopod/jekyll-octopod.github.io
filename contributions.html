@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>jekyll - octopod - Contributions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,11 +16,9 @@
 
   <link href='/assets/css/ubuntu.css' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
-  <link rel="stylesheet" type="text/css" href="/css/custom_styles.css">
 
   <script src="/assets/js/dropdown.js"></script>
 
-  
   
 </head>
 
@@ -38,6 +36,10 @@
 
     <div class="navbar-menu" id="navMenu">
       <div class="navbar-start">
+        <!-- This site overrides the theme's default.html just for this nav: it lists the
+             jekyll-octopod project's own GitHub links directly instead of the theme's normal
+             page-navigation ({{ site | navigation_list:page }}), since those
+             are the links a visitor to the project's own docs site wants, not per-page navigation. -->
         <a class="navbar-item" href="https://jekyll-octopod.github.io">Home</a>
         <a class="navbar-item" href="https://fosstodon.org/@informatom" rel="me"><i class="lab la-mastodon"></i>&nbsp;@informatom@fosstodon.org</a>
         <a class="navbar-item" href="https://github.com/jekyll-octopod/jekyll-octopod/issues"><i class="lab la-github"></i>&nbsp;Github Issues</a>
@@ -48,7 +50,7 @@
         <div class="navbar-item">
           <form class="field has-addons" action="https://google.com/search" method="get" role="search">
             <div class="control">
-              <input type="text" class="input" placeholder="search item">
+              <input type="text" class="input" name="q" placeholder="search item" value="">
               <input type="hidden" name="q" value="site:jekyll-octopod.github.io" />
             </div>
             <div class="control">
@@ -102,7 +104,7 @@ but they are created from <a href="https://github.com/jekyll-octopod/jekyll-octo
 </div>
 
 <p class="has-text-centered">
-  <img width="200px" src="https://jekyll-octopod.github.io/img/logo-360x360.png" alt="jekyll - octopod logo">
+  <img width="200px" src="https://jekyll-octopod.github.io/assets/img/logo-360x360.png" alt="jekyll - octopod logo">
 </p>
 
 <p>Static Site Podcast Publishing for Geeks.</p>
@@ -151,7 +153,10 @@ Follow us on the fediverse for News!
         </div>
       </div>
       <div id="footer" class="has-text-right">
-        <small>Powered by <a href="https://github.com/pattex/octopod">Octopod</a> and <a href="http://jekyllrb.com/">Jekyll</a>.</small>
+        <small>
+          Powered by <a href="https://jekyll-octopod.github.io/">jekyll-octopod</a>
+          and <a href="http://jekyllrb.com/">Jekyll</a>.
+        </small>
       </div>
     </div>
   </section>
