@@ -19,9 +19,9 @@
     <atom:link rel="alternate" href="https://jekyll-octopod.github.io/episodes.mp3.rss" type="application/rss+xml" title="mp3 Episode RSS-Feed"/>
     <description>Static Site Podcast Publishing for Geeks.
 </description>
-    <lastBuildDate>Wed, 12 Aug 2026 11:59:11 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 15 Aug 2026 13:20:10 +0000</lastBuildDate>
     <language>en</language>
-    <generator>Jekyll-Octopod 0.18.1</generator>
+    <generator>Jekyll-Octopod 0.20.1</generator>
 
     <itunes:summary>Static Site Podcast Publishing for Geeks.
 </itunes:summary>

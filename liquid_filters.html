@@ -18,8 +18,6 @@
   <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
 
   <script src="/assets/js/dropdown.js"></script>
-
-  
 </head>
 
 <body>
@@ -203,15 +201,6 @@ page directly, no arguments needed.</p>
 <p>Returns the host of a given url</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="s1">'</span><span class="s">https://github.com/pattex/octopod'</span> <span class="err">|</span> <span class="nv">host_from_url</span> <span class="pi">}}</span> <span class="s">=&gt; "github.com"</span></code></pre></figure>
-
-<h3 id="disqus-configuration">Disqus configuration</h3>
-
-<p>Generates the config for disqus integration. If a page object is given, it
-generates the config variables only for this page. Otherwise, it only
-generates the global config variables.</p>
-
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="nv">site | disqus_config</span> <span class="pi">}}</span>
-<span class="pi">{{</span> <span class="nv">site | disqus_config</span><span class="pi">:</span><span class="nv">page</span> <span class="pi">}}</span></code></pre></figure>
 
 <h3 id="sha1">SHA1</h3>
 

@@ -4061,6 +4061,9 @@ a.box:active {
   margin-bottom: 0.25em;
   margin-top: 0.25em;
 }
+.content ul ul:not(:first-child) {
+  margin-top: 0.25em;
+}
 .content ul ul ul {
   list-style-type: square;
 }
