@@ -184,6 +184,16 @@ page directly, no arguments needed.</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{</span><span class="err">%</span> <span class="nv">podlove_player %</span><span class="pi">}</span></code></pre></figure>
 
+<p>The player’s share tab is always configured with every channel the player itself supports
+(Twitter, Facebook, WhatsApp, LinkedIn, Pinterest, Xing, mail, link) — this isn’t configurable per
+site or post.</p>
+
+<p>If a WebVTT transcript file sits next to the episode’s audio (same basename, <code class="language-plaintext highlighter-rouge">.vtt</code> extension —
+e.g. <code class="language-plaintext highlighter-rouge">episode1.mp3</code> → <code class="language-plaintext highlighter-rouge">episode1.vtt</code> in the <code class="language-plaintext highlighter-rouge">episodes</code> directory), it’s picked up automatically and
+fed to the player as its transcript, including Auphonic’s <code class="language-plaintext highlighter-rouge">&lt;v Speaker&gt;text&lt;/v&gt;</code> voice-tag
+convention for per-cue speaker names. Use the <code class="language-plaintext highlighter-rouge">transcript</code> front matter key (see
+<a href="./post_structure">Post structure</a>) if the transcript file doesn’t share the audio’s basename.</p>
+
 <h3 id="string-of-duration">String of duration</h3>
 
 <p>Gets a number of seconds and returns a human readable duration string of it.</p>
