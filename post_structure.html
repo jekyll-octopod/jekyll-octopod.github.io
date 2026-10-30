@@ -103,6 +103,12 @@ Each post has to have a certain structure which consists of the YAML front matte
 <span class="c1">### transcript: only needed if the WebVTT file's name doesn't match the audio file's basename;</span>
 <span class="c1">### otherwise it's picked up automatically (episode0.mp3 -&gt; episode0.vtt), see Web player</span>
 <span class="na">transcript</span><span class="pi">:</span> <span class="s">episode0.vtt</span>
+<span class="c1">### speakers: optional, overrides the site-wide speakers from _config.yml for this episode</span>
+<span class="na">speakers</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s">john</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">John Doe</span>
+    <span class="na">voice</span><span class="pi">:</span> <span class="s">John</span>
+    <span class="na">avatar</span><span class="pi">:</span> <span class="s">/assets/img/speakers/john.jpg</span>
 <span class="na">tags</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="s1">'</span><span class="s">a</span><span class="nv"> </span><span class="s">tag'</span>
   <span class="pi">-</span> <span class="s1">'</span><span class="s">another</span><span class="nv"> </span><span class="s">tag'</span>

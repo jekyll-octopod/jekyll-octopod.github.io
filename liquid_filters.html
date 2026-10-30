@@ -194,6 +194,16 @@ fed to the player as its transcript, including Auphonic’s <code class="languag
 convention for per-cue speaker names. Use the <code class="language-plaintext highlighter-rouge">transcript</code> front matter key (see
 <a href="./post_structure">Post structure</a>) if the transcript file doesn’t share the audio’s basename.</p>
 
+<p>Each voice tag is shown as the speaker’s name above their part of the transcript, with a paragraph
+break at every change of speaker. To show full names and avatars instead, declare <code class="language-plaintext highlighter-rouge">speakers</code> in
+<code class="language-plaintext highlighter-rouge">_config.yml</code> (or per post in its front matter, which takes precedence):</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">speakers</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s">thomas</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">Thomas Kahle</span>
+    <span class="na">voice</span><span class="pi">:</span> <span class="s">Thomas</span>                        <span class="c1"># matches &lt;v Thomas&gt;, defaults to name</span>
+    <span class="na">avatar</span><span class="pi">:</span> <span class="s">/assets/img/speakers/thomas.jpg</span></code></pre></figure>
+
 <h3 id="string-of-duration">String of duration</h3>
 
 <p>Gets a number of seconds and returns a human readable duration string of it.</p>
@@ -237,6 +247,14 @@ parameter, it will be skipped.</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="nv">site | episode_feeds</span> <span class="pi">}}</span>
 <span class="pi">{{</span> <span class="nv">site | episode_feeds</span><span class="pi">:</span><span class="nv">mp3</span> <span class="pi">}}</span></code></pre></figure>
+
+<h3 id="episode-feed-url">Episode feed URL</h3>
+
+<p>Returns the full URL of an episode feed: <code class="language-plaintext highlighter-rouge">episodes.&lt;episode_file_format&gt;.rss</code> within the root
+directory, unless <code class="language-plaintext highlighter-rouge">episode_feed_permalinks</code> in the <code class="language-plaintext highlighter-rouge">_config.yml</code> sets a different path for that
+format (see <a href="./configuration">Configuration</a>). The episode feed filters above and below use it, too.</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">{{</span> <span class="nv">site | episode_feed_url</span><span class="pi">:</span><span class="s1">'</span><span class="s">mp3'</span> <span class="pi">}}</span> <span class="s">=&gt; https://example.com/episodes.mp3.rss</span></code></pre></figure>
 
 <h3 id="episode-feeds-html">Episode feeds HTML</h3>
 
